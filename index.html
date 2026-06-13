@@ -31,7 +31,6 @@
       border-color: #c7d2fe;
     }
 
-    /* Floating WhatsApp button */
     .whatsapp-float {
       position: fixed;
       bottom: 28px;
@@ -52,12 +51,10 @@
       box-shadow: 0 6px 28px rgba(37,211,102,0.5);
     }
 
-    /* Nav scroll effect via JS */
     .nav-scrolled {
       box-shadow: 0 1px 20px rgba(0,0,0,0.06);
     }
 
-    /* Photo placeholder when no image */
     .photo-placeholder {
       display: flex;
       align-items: center;
@@ -66,13 +63,38 @@
       color: #a5b4fc;
       font-size: 64px;
     }
+
+    /* Language toggle */
+    .lang-btn {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      background: #f1f5f9;
+      border-radius: 999px;
+      padding: 4px;
+    }
+    .lang-btn button {
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      transition: all 0.15s ease;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      color: #64748b;
+    }
+    .lang-btn button.active {
+      background: white;
+      color: #1e293b;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.10);
+    }
   </style>
 </head>
 <body class="bg-white text-slate-900 antialiased">
 
   <!-- ═══ FLOATING WHATSAPP ═══ -->
-  <!-- REEMPLAZA el número: https://wa.me/TUNUMERODEPAIS (ej: https://wa.me/573001234567) -->
-  <a href="https://wa.me/573172866192" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Contáctame por WhatsApp">
+  <a href="https://wa.me/573172866192" target="_blank" rel="noopener" class="whatsapp-float" aria-label="WhatsApp">
     <svg width="28" height="28" fill="white" viewBox="0 0 24 24">
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
     </svg>
@@ -84,18 +106,28 @@
       <a href="#" class="font-semibold text-lg tracking-tight select-none">
         Simplai <span class="text-slate-400 font-light">by Liz</span>
       </a>
-      <!-- Desktop links -->
-      <div class="hidden md:flex items-center gap-8">
-        <a href="#servicios" class="text-sm text-slate-500 hover:text-slate-900 transition-colors">Servicios</a>
-        <a href="#sobre-mi" class="text-sm text-slate-500 hover:text-slate-900 transition-colors">Sobre mí</a>
-        <a href="#contacto" class="bg-indigo-600 text-white text-sm font-medium px-5 py-2.5 rounded-full hover:bg-indigo-700 transition-colors">
+      <div class="hidden md:flex items-center gap-6">
+        <a href="#servicios" class="text-sm text-slate-500 hover:text-slate-900 transition-colors" data-es="Servicios" data-en="Services">Servicios</a>
+        <a href="#sobre-mi" class="text-sm text-slate-500 hover:text-slate-900 transition-colors" data-es="Sobre mí" data-en="About me">Sobre mí</a>
+        <!-- Language toggle -->
+        <div class="lang-btn">
+          <button id="btn-es" class="active" onclick="setLang('es')">ES</button>
+          <button id="btn-en" onclick="setLang('en')">EN</button>
+        </div>
+        <a href="#contacto" class="bg-indigo-600 text-white text-sm font-medium px-5 py-2.5 rounded-full hover:bg-indigo-700 transition-colors" data-es="Hablemos" data-en="Let's talk">
           Hablemos
         </a>
       </div>
-      <!-- Mobile CTA -->
-      <a href="#contacto" class="md:hidden bg-indigo-600 text-white text-sm font-medium px-4 py-2 rounded-full hover:bg-indigo-700 transition-colors">
-        Hablemos
-      </a>
+      <!-- Mobile -->
+      <div class="md:hidden flex items-center gap-3">
+        <div class="lang-btn">
+          <button id="btn-es-m" class="active" onclick="setLang('es')">ES</button>
+          <button id="btn-en-m" onclick="setLang('en')">EN</button>
+        </div>
+        <a href="#contacto" class="bg-indigo-600 text-white text-sm font-medium px-4 py-2 rounded-full hover:bg-indigo-700 transition-colors" data-es="Hablemos" data-en="Let's talk">
+          Hablemos
+        </a>
+      </div>
     </div>
   </nav>
 
@@ -107,17 +139,16 @@
       <div>
         <div class="inline-flex items-center gap-2 bg-indigo-50 text-indigo-700 text-sm font-medium px-4 py-2 rounded-full mb-7">
           <span class="w-2 h-2 bg-indigo-500 rounded-full animate-pulse"></span>
-          Consultoría en datos e IA
+          <span data-es="Consultoría en datos e IA" data-en="Data & AI Consulting">Consultoría en datos e IA</span>
         </div>
         <h1 class="text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight mb-6">
-          Simplifica tu<br>trabajo con<br>
-          <span class="gradient-text">datos e IA</span>
+          <span data-es="Simplifica tu<br>trabajo con<br>" data-en="Simplify your<br>work with<br>">Simplifica tu<br>trabajo con<br></span>
+          <span class="gradient-text" data-es="datos e IA" data-en="data & AI">datos e IA</span>
         </h1>
-        <p class="text-xl text-slate-500 leading-relaxed mb-9 max-w-lg">
+        <p class="text-xl text-slate-500 leading-relaxed mb-9 max-w-lg" data-es="Te ayudo a automatizar procesos, construir dashboards que realmente uses y sacarle el máximo provecho a la IA — sin complicar tu vida." data-en="I help you automate processes, build dashboards you'll actually use, and get the most out of AI — without overcomplicating things.">
           Te ayudo a automatizar procesos, construir dashboards que realmente uses y sacarle el máximo provecho a la IA — sin complicar tu vida.
         </p>
         <div class="flex flex-col sm:flex-row gap-3">
-          <!-- REEMPLAZA el número -->
           <a href="https://wa.me/573172866192" target="_blank" rel="noopener"
              class="inline-flex items-center justify-center gap-2.5 bg-green-500 text-white font-semibold px-7 py-3.5 rounded-full hover:bg-green-600 transition-colors">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -125,8 +156,7 @@
             </svg>
             WhatsApp
           </a>
-          <!-- REEMPLAZA con tu email si quieres uno de dominio propio -->
-          <a href="mailto:llanoslizeth@gmail.com"
+          <a href="mailto:simpleai@gmail.com"
              class="inline-flex items-center justify-center gap-2.5 border border-slate-200 text-slate-700 font-semibold px-7 py-3.5 rounded-full hover:border-indigo-300 hover:text-indigo-700 transition-colors">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
@@ -136,29 +166,21 @@
         </div>
       </div>
 
-      <!-- Photo -->
+      <!-- Photo (hero: liz2.png) -->
       <div class="flex justify-center lg:justify-end">
         <div class="relative">
           <div class="w-72 h-88 lg:w-88 lg:h-[460px] rounded-3xl overflow-hidden hero-photo-bg">
-            <!--
-              REEMPLAZA AQUÍ TU FOTO:
-              1. Copia tu foto al mismo folder que este archivo con el nombre "liz.jpg"
-              2. Cambia "liz.jpg" por el nombre de tu foto si es diferente
-              La foto ideal es vertical (retrato), mínimo 600x800px
-            -->
             <img
-              src="images/liz1.png"
+              src="images/liz2.png"
               alt="Liz — Simplai"
               class="w-full h-full object-cover object-top"
               onerror="this.parentElement.classList.add('photo-placeholder'); this.style.display='none';"
             />
           </div>
-          <!-- Badge decorativo -->
           <div class="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-xl border border-slate-100 px-5 py-3.5">
-            <div class="text-xs text-slate-400 mb-0.5 font-medium uppercase tracking-wide">Especialidad</div>
-            <div class="font-semibold text-slate-900 text-sm">Datos · IA · Dashboards</div>
+            <div class="text-xs text-slate-400 mb-0.5 font-medium uppercase tracking-wide" data-es="Especialidad" data-en="Specialty">Especialidad</div>
+            <div class="font-semibold text-slate-900 text-sm" data-es="Datos · IA · Dashboards" data-en="Data · AI · Dashboards">Datos · IA · Dashboards</div>
           </div>
-          <!-- Dot decorativo -->
           <div class="absolute -top-3 -right-3 w-16 h-16 bg-indigo-100 rounded-full opacity-60"></div>
           <div class="absolute top-8 -right-5 w-8 h-8 bg-violet-200 rounded-full opacity-50"></div>
         </div>
@@ -170,55 +192,51 @@
   <section id="servicios" class="py-24 px-6 bg-slate-50">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-16">
-        <p class="text-indigo-600 font-semibold text-sm uppercase tracking-widest mb-3">Servicios</p>
-        <h2 class="text-3xl lg:text-4xl font-bold mb-4">¿En qué te puedo ayudar?</h2>
-        <p class="text-slate-500 text-lg max-w-xl mx-auto">Soluciones diseñadas para simplificar, no para complicar.</p>
+        <p class="text-indigo-600 font-semibold text-sm uppercase tracking-widest mb-3" data-es="Servicios" data-en="Services">Servicios</p>
+        <h2 class="text-3xl lg:text-4xl font-bold mb-4" data-es="¿En qué te puedo ayudar?" data-en="How can I help you?">¿En qué te puedo ayudar?</h2>
+        <p class="text-slate-500 text-lg max-w-xl mx-auto" data-es="Soluciones diseñadas para simplificar, no para complicar." data-en="Solutions designed to simplify, not complicate.">Soluciones diseñadas para simplificar, no para complicar.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
 
-        <!-- Dashboards -->
         <div class="bg-white rounded-2xl p-8 border border-slate-100 card-hover">
           <div class="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center mb-5">
             <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
             </svg>
           </div>
-          <h3 class="text-xl font-semibold mb-3">Dashboards interactivos</h3>
-          <p class="text-slate-500 leading-relaxed">Visualiza tus datos de forma clara y accionable. Tableros que realmente usas, sin depender de alguien técnico para actualizarlos.</p>
+          <h3 class="text-xl font-semibold mb-3" data-es="Dashboards interactivos" data-en="Interactive dashboards">Dashboards interactivos</h3>
+          <p class="text-slate-500 leading-relaxed" data-es="Visualiza tus datos de forma clara y accionable. Tableros que realmente usas, sin depender de alguien técnico para actualizarlos." data-en="Visualize your data clearly and actionably. Dashboards you'll actually use, without relying on a technical person to update them.">Visualiza tus datos de forma clara y accionable. Tableros que realmente usas, sin depender de alguien técnico para actualizarlos.</p>
         </div>
 
-        <!-- Automatización -->
         <div class="bg-white rounded-2xl p-8 border border-slate-100 card-hover">
           <div class="w-12 h-12 bg-violet-50 rounded-xl flex items-center justify-center mb-5">
             <svg class="w-6 h-6 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
             </svg>
           </div>
-          <h3 class="text-xl font-semibold mb-3">Automatización con IA</h3>
-          <p class="text-slate-500 leading-relaxed">Elimina tareas repetitivas de tu día a día. Configuro flujos y agentes de IA que trabajan por ti, con herramientas simples y de bajo mantenimiento.</p>
+          <h3 class="text-xl font-semibold mb-3" data-es="Automatización con IA" data-en="AI Automation">Automatización con IA</h3>
+          <p class="text-slate-500 leading-relaxed" data-es="Elimina tareas repetitivas de tu día a día. Configuro flujos y agentes de IA que trabajan por ti, con herramientas simples y de bajo mantenimiento." data-en="Eliminate repetitive tasks from your daily routine. I set up AI flows and agents that work for you, using simple, low-maintenance tools.">Elimina tareas repetitivas de tu día a día. Configuro flujos y agentes de IA que trabajan por ti, con herramientas simples y de bajo mantenimiento.</p>
         </div>
 
-        <!-- Simplificación -->
         <div class="bg-white rounded-2xl p-8 border border-slate-100 card-hover">
           <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center mb-5">
             <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
             </svg>
           </div>
-          <h3 class="text-xl font-semibold mb-3">Simplificación de procesos</h3>
-          <p class="text-slate-500 leading-relaxed">Analizo cómo trabajas y te propongo un sistema más ágil. Menos herramientas, menos fricción, más tiempo para lo que realmente importa.</p>
+          <h3 class="text-xl font-semibold mb-3" data-es="Simplificación de procesos" data-en="Process simplification">Simplificación de procesos</h3>
+          <p class="text-slate-500 leading-relaxed" data-es="Analizo cómo trabajas y te propongo un sistema más ágil. Menos herramientas, menos fricción, más tiempo para lo que realmente importa." data-en="I analyze how you work and propose a more agile system. Fewer tools, less friction, more time for what truly matters.">Analizo cómo trabajas y te propongo un sistema más ágil. Menos herramientas, menos fricción, más tiempo para lo que realmente importa.</p>
         </div>
 
-        <!-- Claude -->
         <div class="bg-white rounded-2xl p-8 border border-slate-100 card-hover">
           <div class="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center mb-5">
             <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-4l-4 4z"/>
             </svg>
           </div>
-          <h3 class="text-xl font-semibold mb-3">Asesoría en proyectos con Claude</h3>
-          <p class="text-slate-500 leading-relaxed">¿Atascado con tu proyecto de IA? Te ayudo a desbloquearlo y a sacarle el máximo provecho a Claude y otras herramientas de IA generativa.</p>
+          <h3 class="text-xl font-semibold mb-3" data-es="Asesoría en proyectos con Claude" data-en="Claude AI project advisory">Asesoría en proyectos con Claude</h3>
+          <p class="text-slate-500 leading-relaxed" data-es="¿Atascado con tu proyecto de IA? Te ayudo a desbloquearlo y a sacarle el máximo provecho a Claude y otras herramientas de IA generativa." data-en="Stuck on your AI project? I help you unblock it and get the most out of Claude and other generative AI tools.">¿Atascado con tu proyecto de IA? Te ayudo a desbloquearlo y a sacarle el máximo provecho a Claude y otras herramientas de IA generativa.</p>
         </div>
 
       </div>
@@ -229,11 +247,10 @@
   <section class="py-24 px-6">
     <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-      <!-- Text -->
       <div>
-        <p class="text-indigo-600 font-semibold text-sm uppercase tracking-widest mb-3">Mi enfoque</p>
-        <h2 class="text-3xl lg:text-4xl font-bold mb-5">Soluciones que tú puedes manejar</h2>
-        <p class="text-slate-500 text-lg leading-relaxed mb-10">
+        <p class="text-indigo-600 font-semibold text-sm uppercase tracking-widest mb-3" data-es="Mi enfoque" data-en="My approach">Mi enfoque</p>
+        <h2 class="text-3xl lg:text-4xl font-bold mb-5" data-es="Soluciones que tú puedes manejar" data-en="Solutions you can manage yourself">Soluciones que tú puedes manejar</h2>
+        <p class="text-slate-500 text-lg leading-relaxed mb-10" data-es="No creo en soluciones que requieren un equipo de IT para mantenerse. Creo en herramientas que tú puedas entender, usar y adaptar sola." data-en="I don't believe in solutions that require an IT team to maintain. I believe in tools you can understand, use, and adapt on your own.">
           No creo en soluciones que requieren un equipo de IT para mantenerse. Creo en herramientas que tú puedas entender, usar y adaptar sola.
         </p>
         <div class="space-y-6">
@@ -244,8 +261,8 @@
               </svg>
             </div>
             <div>
-              <div class="font-semibold mb-1">Mínimas herramientas</div>
-              <div class="text-slate-500 text-sm leading-relaxed">Usamos solo lo necesario. Sin suscripciones innecesarias ni complejidad artificial.</div>
+              <div class="font-semibold mb-1" data-es="Mínimas herramientas" data-en="Minimal tools">Mínimas herramientas</div>
+              <div class="text-slate-500 text-sm leading-relaxed" data-es="Usamos solo lo necesario. Sin suscripciones innecesarias ni complejidad artificial." data-en="We use only what's needed. No unnecessary subscriptions or artificial complexity.">Usamos solo lo necesario. Sin suscripciones innecesarias ni complejidad artificial.</div>
             </div>
           </div>
           <div class="flex items-start gap-4">
@@ -255,8 +272,8 @@
               </svg>
             </div>
             <div>
-              <div class="font-semibold mb-1">Bajo mantenimiento</div>
-              <div class="text-slate-500 text-sm leading-relaxed">Lo que construimos juntas debe funcionar sin que tengas que llamarme cada semana.</div>
+              <div class="font-semibold mb-1" data-es="Bajo mantenimiento" data-en="Low maintenance">Bajo mantenimiento</div>
+              <div class="text-slate-500 text-sm leading-relaxed" data-es="Lo que construimos juntas debe funcionar sin que tengas que llamarme cada semana." data-en="What we build together should work without you needing to call me every week.">Lo que construimos juntas debe funcionar sin que tengas que llamarme cada semana.</div>
             </div>
           </div>
           <div class="flex items-start gap-4">
@@ -266,26 +283,25 @@
               </svg>
             </div>
             <div>
-              <div class="font-semibold mb-1">Entregables desde la primera sesión</div>
-              <div class="text-slate-500 text-sm leading-relaxed">Cada proyecto termina con algo concreto y usable. Sin entregas indefinidas.</div>
+              <div class="font-semibold mb-1" data-es="Entregables desde la primera sesión" data-en="Deliverables from the first session">Entregables desde la primera sesión</div>
+              <div class="text-slate-500 text-sm leading-relaxed" data-es="Cada proyecto termina con algo concreto y usable. Sin entregas indefinidas." data-en="Every project ends with something concrete and usable. No endless deliverables.">Cada proyecto termina con algo concreto y usable. Sin entregas indefinidas.</div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Cards visuales -->
       <div class="grid grid-cols-2 gap-4">
         <div class="bg-indigo-600 text-white rounded-2xl p-7 col-span-2">
           <div class="text-4xl font-bold mb-2">ES · EN</div>
-          <div class="text-indigo-200 leading-relaxed">Trabajo con clientes en español e inglés. Donde estés, como prefieras.</div>
+          <div class="text-indigo-200 leading-relaxed" data-es="Trabajo con clientes en español e inglés. Donde estés, como prefieras." data-en="I work with clients in Spanish and English. Wherever you are, however you prefer.">Trabajo con clientes en español e inglés. Donde estés, como prefieras.</div>
         </div>
         <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100">
           <div class="text-3xl font-bold text-slate-900 mb-1">1:1</div>
-          <div class="text-slate-500 text-sm leading-relaxed">Atención personalizada, no plantillas genéricas</div>
+          <div class="text-slate-500 text-sm leading-relaxed" data-es="Atención personalizada, no plantillas genéricas" data-en="Personalized attention, not generic templates">Atención personalizada, no plantillas genéricas</div>
         </div>
         <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100">
-          <div class="text-2xl font-bold text-slate-900 mb-1">Hora<br>+ Paquete</div>
-          <div class="text-slate-500 text-sm leading-relaxed">Flexibilidad según tu proyecto</div>
+          <div class="text-2xl font-bold text-slate-900 mb-1" data-es="Hora<br>+ Paquete" data-en="Hourly<br>+ Package">Hora<br>+ Paquete</div>
+          <div class="text-slate-500 text-sm leading-relaxed" data-es="Flexibilidad según tu proyecto" data-en="Flexibility based on your project">Flexibilidad según tu proyecto</div>
         </div>
       </div>
 
@@ -295,27 +311,22 @@
   <!-- ═══ SOBRE MÍ ═══ -->
   <section id="sobre-mi" class="py-24 px-6 bg-slate-50">
     <div class="max-w-3xl mx-auto text-center">
-      <!-- Avatar -->
-      <div class="w-28 h-28 rounded-full overflow-hidden mx-auto mb-7 ring-4 ring-white shadow-lg hero-photo-bg">
-        <!--
-          REEMPLAZA AQUÍ TU FOTO (puede ser la misma que en el hero):
-          Usa el mismo nombre de archivo que pusiste arriba (liz.jpg)
-        -->
+      <!-- Avatar más grande: w-44 h-44 -->
+      <div class="w-44 h-44 rounded-full overflow-hidden mx-auto mb-7 ring-4 ring-white shadow-lg hero-photo-bg">
         <img
-          src="images/liz2.png"
+          src="images/liz1.png"
           alt="Liz"
           class="w-full h-full object-cover object-top"
           onerror="this.parentElement.classList.add('photo-placeholder'); this.style.display='none';"
         />
       </div>
 
-      <p class="text-indigo-600 font-semibold text-sm uppercase tracking-widest mb-3">Sobre mí</p>
-      <h2 class="text-3xl lg:text-4xl font-bold mb-6">Hola, soy Liz</h2>
-      <p class="text-slate-500 text-lg leading-relaxed mb-5">
+      <p class="text-indigo-600 font-semibold text-sm uppercase tracking-widest mb-3" data-es="Sobre mí" data-en="About me">Sobre mí</p>
+      <h2 class="text-3xl lg:text-4xl font-bold mb-6" data-es="Hola, soy Liz" data-en="Hi, I'm Liz">Hola, soy Liz</h2>
+      <p class="text-slate-500 text-lg leading-relaxed mb-5" data-es="Soy estadística y científica de datos con experiencia trabajando con organizaciones que necesitan convertir datos en decisiones. Con el tiempo aprendí que el mayor problema no es la falta de datos — es la falta de claridad sobre cómo usarlos." data-en="I'm a statistician and data scientist with experience working with organizations that need to turn data into decisions. Over time I learned that the biggest problem isn't lack of data — it's lack of clarity on how to use it.">
         Soy estadística y científica de datos con experiencia trabajando con organizaciones que necesitan convertir datos en decisiones. Con el tiempo aprendí que el mayor problema no es la falta de datos — es la falta de claridad sobre cómo usarlos.
       </p>
-      <p class="text-slate-500 text-lg leading-relaxed">
-        <!-- AJUSTA este párrafo a tu gusto con tu historia personal / background -->
+      <p class="text-slate-500 text-lg leading-relaxed" data-es="Simplai nació para ayudar a personas y equipos pequeños a hacer más con menos: menos herramientas, menos complicaciones y más impacto real. Me apasiona la IA y sé cómo hacerla accesible para quien no es técnico." data-en="Simplai was born to help individuals and small teams do more with less: fewer tools, less friction, and more real impact. I'm passionate about AI and know how to make it accessible for non-technical people.">
         Simplai nació para ayudar a personas y equipos pequeños a hacer más con menos: menos herramientas, menos complicaciones y más impacto real. Me apasiona la IA y sé cómo hacerla accesible para quien no es técnico.
       </p>
     </div>
@@ -324,26 +335,25 @@
   <!-- ═══ CONTACTO ═══ -->
   <section id="contacto" class="py-24 px-6">
     <div class="max-w-2xl mx-auto text-center">
-      <p class="text-indigo-600 font-semibold text-sm uppercase tracking-widest mb-3">Contacto</p>
-      <h2 class="text-3xl lg:text-4xl font-bold mb-4">¿Hablamos?</h2>
-      <p class="text-slate-500 text-lg mb-10 leading-relaxed">
+      <p class="text-indigo-600 font-semibold text-sm uppercase tracking-widest mb-3" data-es="Contacto" data-en="Contact">Contacto</p>
+      <h2 class="text-3xl lg:text-4xl font-bold mb-4" data-es="¿Hablamos?" data-en="Let's talk?">¿Hablamos?</h2>
+      <p class="text-slate-500 text-lg mb-10 leading-relaxed" data-es="Sin compromisos. Cuéntame tu proyecto y vemos cómo puedo ayudarte." data-en="No strings attached. Tell me about your project and let's see how I can help.">
         Sin compromisos. Cuéntame tu proyecto y vemos cómo puedo ayudarte.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <!-- REEMPLAZA el número -->
         <a href="https://wa.me/573172866192" target="_blank" rel="noopener"
            class="inline-flex items-center justify-center gap-2.5 bg-green-500 text-white font-semibold px-9 py-4 rounded-full hover:bg-green-600 transition-colors text-base">
           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
           </svg>
-          Escríbeme por WhatsApp
+          <span data-es="Escríbeme por WhatsApp" data-en="Message me on WhatsApp">Escríbeme por WhatsApp</span>
         </a>
-        <a href="mailto:llanoslizeth@gmail.com"
+        <a href="mailto:simpleai@gmail.com"
            class="inline-flex items-center justify-center gap-2.5 border-2 border-slate-200 text-slate-700 font-semibold px-9 py-4 rounded-full hover:border-indigo-400 hover:text-indigo-700 transition-colors text-base">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
           </svg>
-          Enviar email
+          <span data-es="Enviar correo" data-en="Send email">Enviar correo</span>
         </a>
       </div>
     </div>
@@ -355,20 +365,43 @@
       <span class="font-semibold text-slate-900">
         Simplai <span class="text-slate-400 font-light">by Liz</span>
       </span>
-      <span class="text-slate-400 text-sm">© 2026 Simplai by Liz · Todos los derechos reservados.</span>
+      <span class="text-slate-400 text-sm" data-es="© 2026 Simplai by Liz · Todos los derechos reservados." data-en="© 2026 Simplai by Liz · All rights reserved.">© 2026 Simplai by Liz · Todos los derechos reservados.</span>
     </div>
   </footer>
 
-  <!-- Nav scroll shadow script -->
   <script>
+    // Nav scroll shadow
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 10) {
-        navbar.classList.add('nav-scrolled');
-      } else {
-        navbar.classList.remove('nav-scrolled');
-      }
+      navbar.classList.toggle('nav-scrolled', window.scrollY > 10);
     });
+
+    // Language switcher
+    let currentLang = 'es';
+
+    function setLang(lang) {
+      currentLang = lang;
+
+      // Update <html> lang attribute
+      document.documentElement.lang = lang;
+
+      // Swap all translatable text nodes
+      document.querySelectorAll('[data-es][data-en]').forEach(el => {
+        const text = el.getAttribute('data-' + lang);
+        if (text !== null) {
+          // Use innerHTML to support <br> tags
+          el.innerHTML = text;
+        }
+      });
+
+      // Update active button state (desktop + mobile)
+      ['es', 'en'].forEach(l => {
+        const btnD = document.getElementById('btn-' + l);
+        const btnM = document.getElementById('btn-' + l + '-m');
+        if (btnD) btnD.classList.toggle('active', l === lang);
+        if (btnM) btnM.classList.toggle('active', l === lang);
+      });
+    }
   </script>
 
 </body>
