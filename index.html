@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -105,8 +105,8 @@
         <a href="#servicios" class="text-sm text-slate-500 hover:text-slate-900 transition-colors" data-es="Servicios" data-en="Services">Servicios</a>
         <a href="#sobre-mi"  class="text-sm text-slate-500 hover:text-slate-900 transition-colors" data-es="Sobre mí"  data-en="About">Sobre mí</a>
         <div class="lang-toggle">
-          <button id="btn-es"   class="active" onclick="setLang('es')">ES</button>
-          <button id="btn-en"   onclick="setLang('en')">EN</button>
+          <button id="btn-es"   onclick="setLang('es')">ES</button>
+          <button id="btn-en"   class="active" onclick="setLang('en')">EN</button>
         </div>
         <a href="#contacto" class="bg-indigo-600 text-white text-sm font-medium px-5 py-2.5 rounded-full hover:bg-indigo-700 transition-colors"
            data-es="Hablemos" data-en="Let's talk">Hablemos</a>
@@ -115,8 +115,8 @@
       <!-- Mobile -->
       <div class="md:hidden flex items-center gap-3">
         <div class="lang-toggle">
-          <button id="btn-es-m" class="active" onclick="setLang('es')">ES</button>
-          <button id="btn-en-m" onclick="setLang('en')">EN</button>
+          <button id="btn-es-m" onclick="setLang('es')">ES</button>
+          <button id="btn-en-m" class="active" onclick="setLang('en')">EN</button>
         </div>
         <a href="#contacto" class="bg-indigo-600 text-white text-sm font-medium px-4 py-2 rounded-full hover:bg-indigo-700 transition-colors"
            data-es="Hablemos" data-en="Let's talk">Hablemos</a>
@@ -287,37 +287,18 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
 
-        <!-- Dashboards — featured -->
-        <div class="md:col-span-2 bg-indigo-600 rounded-2xl p-8 card-hover">
-          <div class="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 items-start">
-            <div>
-              <span class="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6 bg-white/20 text-white"
-                    data-es="Servicio estrella" data-en="Featured service">Servicio estrella</span>
-              <h3 class="text-2xl font-bold mb-4 text-white"
-                  data-es="Dashboards que sí se usan" data-en="Dashboards you'll actually use">Dashboards que sí se usan</h3>
-              <p class="leading-relaxed text-indigo-100"
-                 data-es="El problema no es que no tengas datos. Es que los tienes en cinco lugares distintos y nadie tiene tiempo de interpretarlos. Te construyo un tablero claro, enfocado y tan simple que cualquiera en tu equipo puede abrirlo y entender qué está pasando, sin depender de ti."
-                 data-en="The problem isn't that you don't have data. It's that you have it in five different places and no one has time to interpret it. I build you a clear, focused dashboard so simple that anyone on your team can open it and understand what's happening, without depending on you.">
-                El problema no es que no tengas datos. Es que los tienes en cinco lugares distintos y nadie tiene tiempo de interpretarlos. Te construyo un tablero claro, enfocado y tan simple que cualquiera en tu equipo puede abrirlo y entender qué está pasando, sin depender de ti.
-              </p>
-            </div>
-            <!-- Mini-viz decorativa -->
-            <div class="hidden md:block shrink-0 w-44">
-              <div class="rounded-xl p-5 bg-white/10">
-                <div class="space-y-2.5 mb-4">
-                  <div class="h-2 rounded-full bg-white/40" style="width:82%"></div>
-                  <div class="h-2 rounded-full bg-white/28" style="width:58%"></div>
-                  <div class="h-2 rounded-full bg-white/34" style="width:70%"></div>
-                  <div class="h-2 rounded-full bg-white/20" style="width:42%"></div>
-                </div>
-                <div class="grid grid-cols-3 gap-1.5">
-                  <div class="h-12 rounded-lg bg-white/15"></div>
-                  <div class="h-12 rounded-lg bg-white/25"></div>
-                  <div class="h-12 rounded-lg bg-white/10"></div>
-                </div>
-              </div>
-            </div>
+        <!-- Dashboards -->
+        <div class="bg-white rounded-2xl p-8 border border-slate-100 card-hover">
+          <div class="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
           </div>
+          <h3 class="text-xl font-semibold mb-3"
+              data-es="Dashboards que sí se usan" data-en="Dashboards you'll actually use">Dashboards que sí se usan</h3>
+          <p class="text-slate-500 leading-relaxed text-sm"
+             data-es="El problema no es que no tengas datos. Es que los tienes en cinco lugares distintos y nadie tiene tiempo de interpretarlos. Te construyo un tablero claro, enfocado y tan simple que cualquiera en tu equipo puede abrirlo y entender qué está pasando, sin depender de ti."
+             data-en="The problem isn't that you don't have data. It's that you have it in five different places and no one has time to interpret it. I build you a clear, focused dashboard so simple that anyone on your team can open it and understand what's happening, without depending on you.">
+            El problema no es que no tengas datos. Es que los tienes en cinco lugares distintos y nadie tiene tiempo de interpretarlos. Te construyo un tablero claro, enfocado y tan simple que cualquiera en tu equipo puede abrirlo y entender qué está pasando, sin depender de ti.
+          </p>
         </div>
 
         <!-- Automatización -->
@@ -349,23 +330,17 @@
         </div>
 
         <!-- IA advisory -->
-        <div class="md:col-span-2 bg-slate-50 rounded-2xl p-8 border border-slate-100 card-hover">
-          <div class="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-6 items-center">
-            <div>
-              <div class="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center mb-5">
-                <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-4l-4 4z"/></svg>
-              </div>
-              <h3 class="text-xl font-semibold mb-3"
-                  data-es="Acompañamiento en proyectos con IA" data-en="AI project advisory">Acompañamiento en proyectos con IA</h3>
-              <p class="text-slate-500 leading-relaxed text-sm"
-                 data-es="¿Tienes una idea para usar IA en tu trabajo pero no sabes si tiene sentido, qué herramienta elegir o cómo empezar? Te ayudo a evaluar, diseñar y prototipar — sin promesas vacías y con criterios claros para decidir los siguientes pasos."
-                 data-en="Do you have an idea for using AI in your work but don't know if it makes sense, which tool to choose, or how to start? I help you evaluate, design, and prototype — no empty promises and with clear criteria for deciding next steps.">
-                ¿Tienes una idea para usar IA en tu trabajo pero no sabes si tiene sentido, qué herramienta elegir o cómo empezar? Te ayudo a evaluar, diseñar y prototipar — sin promesas vacías y con criterios claros para decidir los siguientes pasos.
-              </p>
-            </div>
-            <a href="#contacto" class="shrink-0 inline-flex items-center gap-2 font-semibold text-sm px-5 py-3 rounded-full bg-slate-900 text-white hover:bg-slate-700 transition-colors whitespace-nowrap"
-               data-es="Conversemos" data-en="Let's talk">Conversemos</a>
+        <div class="bg-white rounded-2xl p-8 border border-slate-100 card-hover">
+          <div class="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-4l-4 4z"/></svg>
           </div>
+          <h3 class="text-xl font-semibold mb-3"
+              data-es="Acompañamiento en proyectos con IA" data-en="AI project advisory">Acompañamiento en proyectos con IA</h3>
+          <p class="text-slate-500 leading-relaxed text-sm"
+             data-es="¿Tienes una idea para usar IA en tu trabajo pero no sabes si tiene sentido, qué herramienta elegir o cómo empezar? Te ayudo a evaluar, diseñar y prototipar — sin promesas vacías y con criterios claros para decidir los siguientes pasos."
+             data-en="Do you have an idea for using AI in your work but don't know if it makes sense, which tool to choose, or how to start? I help you evaluate, design, and prototype — no empty promises and with clear criteria for deciding next steps.">
+            ¿Tienes una idea para usar IA en tu trabajo pero no sabes si tiene sentido, qué herramienta elegir o cómo empezar? Te ayudo a evaluar, diseñar y prototipar — sin promesas vacías y con criterios claros para decidir los siguientes pasos.
+          </p>
         </div>
 
       </div>
@@ -516,6 +491,28 @@
           </div>
         </div>
 
+        <!-- Caso 4: Monitoreo de fuentes -->
+        <div class="grid grid-cols-1 md:grid-cols-2 rounded-2xl overflow-hidden border border-slate-100">
+          <div class="bg-slate-50 p-7">
+            <p class="text-xs font-bold uppercase tracking-widest mb-4 text-slate-400"
+               data-es="Antes" data-en="Before">Antes</p>
+            <p class="text-sm leading-relaxed text-slate-500"
+               data-es="Revisar docenas de fuentes, páginas web y reportes dispersos todos los días, a toda hora. Horas perdidas buscando la misma información en distintos lugares, sin saber si ya estaba actualizada."
+               data-en="Checking dozens of sources, web pages, and scattered reports every day, at all hours. Hours lost searching for the same information in different places, never sure if it was up to date.">
+              Revisar docenas de fuentes, páginas web y reportes dispersos todos los días, a toda hora. Horas perdidas buscando la misma información en distintos lugares, sin saber si ya estaba actualizada.
+            </p>
+          </div>
+          <div class="bg-white p-7">
+            <p class="text-xs font-bold uppercase tracking-widest mb-4 text-indigo-500"
+               data-es="Después" data-en="After">Después</p>
+            <p class="text-sm leading-relaxed text-slate-700"
+               data-es="Un dashboard centralizado que consolida toda esa información en un solo lugar. Lo que antes tomaba días de seguimiento continuo, ahora se revisa en minutos."
+               data-en="A centralized dashboard that brings all that information together in one place. What used to take days of continuous monitoring now takes just minutes to review.">
+              Un dashboard centralizado que consolida toda esa información en un solo lugar. Lo que antes tomaba días de seguimiento continuo, ahora se revisa en minutos.
+            </p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -542,14 +539,14 @@
 
         <div class="space-y-5 mb-9">
           <p class="text-base leading-relaxed text-slate-500"
-             data-es="Soy estadística y científica de datos. Después de años trabajando con organizaciones que querían aprovechar mejor sus datos, entendí algo que no está en los libros: muchas soluciones fallan no por falta de tecnología, sino porque nadie quiere usar algo que se siente complicado."
-             data-en="I'm a statistician and data scientist. After years working with organizations that wanted to make better use of their data, I understood something that's not in the textbooks: many solutions fail not because of a lack of technology, but because no one wants to use something that feels complicated.">
-            Soy estadística y científica de datos. Después de años trabajando con organizaciones que querían aprovechar mejor sus datos, entendí algo que no está en los libros: muchas soluciones fallan no por falta de tecnología, sino porque nadie quiere usar algo que se siente complicado.
+             data-es="Soy estadística y científica de datos con más de 10 años de experiencia trabajando con organizaciones que querían aprovechar mejor sus datos. Con el tiempo entendí algo que no está en los libros: muchas soluciones fallan no por falta de tecnología, sino porque nadie quiere usar algo que se siente complicado."
+             data-en="I'm a statistician and data scientist with over 10 years of experience working with organizations that wanted to make better use of their data. Over time I understood something that's not in the textbooks: many solutions fail not because of a lack of technology, but because no one wants to use something that feels complicated.">
+            Soy estadística y científica de datos con más de 10 años de experiencia trabajando con organizaciones que querían aprovechar mejor sus datos. Con el tiempo entendí algo que no está en los libros: muchas soluciones fallan no por falta de tecnología, sino porque nadie quiere usar algo que se siente complicado.
           </p>
           <p class="text-base leading-relaxed text-slate-500"
-             data-es="Por eso creé Simplai: para ayudar a personas y equipos pequeños a convertir datos, IA y automatización en herramientas prácticas, entendibles y sostenibles. Sin equipos de IT, sin suscripciones innecesarias, sin promesas vacías."
-             data-en="That's why I created Simplai: to help people and small teams turn data, AI, and automation into practical, understandable, and sustainable tools. No IT teams, no unnecessary subscriptions, no empty promises.">
-            Por eso creé Simplai: para ayudar a personas y equipos pequeños a convertir datos, IA y automatización en herramientas prácticas, entendibles y sostenibles. Sin equipos de IT, sin suscripciones innecesarias, sin promesas vacías.
+             data-es="Por eso creé Simplai: para ayudar a personas y equipos pequeños a convertir datos, IA y automatización en herramientas prácticas, entendibles y sostenibles — sin complicaciones innecesarias y con resultados reales desde la primera sesión."
+             data-en="That's why I created Simplai: to help people and small teams turn data, AI, and automation into practical, understandable, and sustainable tools — without unnecessary complexity and with real results from the very first session.">
+            Por eso creé Simplai: para ayudar a personas y equipos pequeños a convertir datos, IA y automatización en herramientas prácticas, entendibles y sostenibles — sin complicaciones innecesarias y con resultados reales desde la primera sesión.
           </p>
         </div>
 
@@ -654,9 +651,9 @@
           </button>
           <div class="faq-answer bg-white">
             <p class="px-6 pb-5 text-sm leading-relaxed text-slate-500"
-               data-es="Depende del problema, pero prefiero herramientas simples que ya conozcas o que sean fáciles de aprender: Google Sheets, Looker Studio, Python cuando tiene sentido, Claude y otras IA generativas. Siempre explico por qué elijo lo que elijo."
-               data-en="It depends on the problem, but I prefer simple tools you already know or that are easy to learn: Google Sheets, Looker Studio, Python when it makes sense, Claude and other generative AIs. I always explain why I choose what I choose.">
-              Depende del problema, pero prefiero herramientas simples que ya conozcas o que sean fáciles de aprender: Google Sheets, Looker Studio, Python cuando tiene sentido, Claude y otras IA generativas. Siempre explico por qué elijo lo que elijo.
+               data-es="Depende del problema. Siempre priorizo herramientas que ya conoces o que son fáciles de aprender, que no requieran mantenimiento constante y que se adapten a tu contexto. Nunca elijo una herramienta porque esté de moda — la elijo porque tiene sentido para lo que necesitas."
+               data-en="It depends on the problem. I always prioritize tools you already know or that are easy to learn, that don't require constant maintenance, and that fit your context. I never choose a tool because it's trendy — I choose it because it makes sense for what you need.">
+              Depende del problema. Siempre priorizo herramientas que ya conoces o que son fáciles de aprender, que no requieran mantenimiento constante y que se adapten a tu contexto. Nunca elijo una herramienta porque esté de moda — la elijo porque tiene sentido para lo que necesitas.
             </p>
           </div>
         </div>
@@ -709,6 +706,9 @@
   </footer>
 
   <script>
+    // Set default language to English on load
+    document.addEventListener('DOMContentLoaded', () => setLang('en'));
+
     // Nav scroll shadow
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
@@ -735,7 +735,7 @@
     });
 
     // Language switcher
-    let currentLang = 'es';
+    let currentLang = 'en';
     function setLang(lang) {
       currentLang = lang;
       document.documentElement.lang = lang;
