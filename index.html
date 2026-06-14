@@ -137,15 +137,14 @@
       </button>
     </div>
     <nav class="flex-1 px-6 py-8 flex flex-col gap-6">
-      <a href="#para-ti"   onclick="closeMobileMenu()" class="text-base font-medium text-slate-700 hover:text-indigo-600 transition-colors" data-es="Para ti"   data-en="For you">For you</a>
-      <a href="#servicios" onclick="closeMobileMenu()" class="text-base font-medium text-slate-700 hover:text-indigo-600 transition-colors" data-es="Servicios" data-en="Services">Services</a>
-      <a href="#sobre-mi"  onclick="closeMobileMenu()" class="text-base font-medium text-slate-700 hover:text-indigo-600 transition-colors" data-es="Sobre mí"  data-en="About">About</a>
+      <a href="#"              onclick="closeMobileMenu()" class="text-base font-medium text-slate-700 hover:text-indigo-600 transition-colors" data-es="Inicio"          data-en="Home">Home</a>
+      <a href="#para-ti"       onclick="closeMobileMenu()" class="text-base font-medium text-slate-700 hover:text-indigo-600 transition-colors" data-es="Para ti"         data-en="For you">For you</a>
+      <a href="#servicios"     onclick="closeMobileMenu()" class="text-base font-medium text-slate-700 hover:text-indigo-600 transition-colors" data-es="Servicios"       data-en="Services">Services</a>
+      <a href="#como-empezamos" onclick="closeMobileMenu()" class="text-base font-medium text-slate-700 hover:text-indigo-600 transition-colors" data-es="Cómo empezamos" data-en="How we start">How we start</a>
+      <a href="#sobre-mi"      onclick="closeMobileMenu()" class="text-base font-medium text-slate-700 hover:text-indigo-600 transition-colors" data-es="Sobre mí"        data-en="About">About</a>
     </nav>
     <div class="px-6 pb-8 pt-4 border-t border-slate-100">
-      <div class="lang-toggle mb-5 justify-center">
-        <button id="btn-es-m" onclick="setLang('es')">ES</button>
-        <button id="btn-en-m" class="active" onclick="setLang('en')">EN</button>
-      </div>
+      <!-- lang toggle removed from menu — now always visible in nav -->
       <a href="#contacto" onclick="closeMobileMenu()"
          class="block w-full bg-indigo-600 text-white text-center font-semibold px-6 py-3.5 rounded-full hover:bg-indigo-700 transition-colors"
          data-es="Hablemos" data-en="Let's talk">Let's talk</a>
@@ -160,12 +159,18 @@
         <img src="images/Logo cuadrado.png" alt="Simplai by Liz" class="h-40 w-auto" />
       </a>
 
-      <!-- Hamburger — all screen sizes -->
-      <button onclick="openMobileMenu()" class="p-2 -mr-2 text-slate-700 hover:text-indigo-600 transition-colors" aria-label="Abrir menú">
-        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-      </button>
+      <!-- Lang toggle + Hamburger — always visible -->
+      <div class="flex items-center gap-3">
+        <div class="lang-toggle">
+          <button id="btn-es" onclick="setLang('es')">ES</button>
+          <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+        </div>
+        <button onclick="openMobileMenu()" class="p-2 -mr-2 text-slate-700 hover:text-indigo-600 transition-colors" aria-label="Abrir menú">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
 
     </div>
   </nav>
@@ -251,9 +256,9 @@
               <svg class="w-3 h-3 text-indigo-600" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
             </span>
             <span class="text-base leading-relaxed text-slate-700"
-                  data-es="Actualizas reportes manualmente cada semana y ya estás cansado de hacerlo."
-                  data-en="You update reports manually every week and you're tired of doing it.">
-              Actualizas reportes manualmente cada semana y ya estás cansado de hacerlo.
+                  data-es="Actualizas reportes, hojas o listas manualmente cada semana y ya estás cansado de hacerlo."
+                  data-en="You update reports, sheets, or lists manually every week and you're tired of doing it.">
+              Actualizas reportes, hojas o listas manualmente cada semana y ya estás cansado de hacerlo.
             </span>
           </li>
           <li class="flex items-start gap-4">
@@ -261,9 +266,9 @@
               <svg class="w-3 h-3 text-indigo-600" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
             </span>
             <span class="text-base leading-relaxed text-slate-700"
-                  data-es="Tienes datos, pero no sabes cómo convertirlos en decisiones concretas."
-                  data-en="You have data, but don't know how to turn it into concrete decisions.">
-              Tienes datos, pero no sabes cómo convertirlos en decisiones concretas.
+                  data-es="Tienes información — de trabajo o personal — pero no sabes cómo usarla para tomar mejores decisiones."
+                  data-en="You have information — work or personal — but don't know how to use it to make better decisions.">
+              Tienes información — de trabajo o personal — pero no sabes cómo usarla para tomar mejores decisiones.
             </span>
           </li>
           <li class="flex items-start gap-4">
@@ -271,9 +276,9 @@
               <svg class="w-3 h-3 text-indigo-600" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
             </span>
             <span class="text-base leading-relaxed text-slate-700"
-                  data-es="Quieres usar IA, pero no sabes por dónde empezar sin perderte en la promesa tecnológica."
-                  data-en="You want to use AI, but don't know where to start without getting lost in the tech hype.">
-              Quieres usar IA, pero no sabes por dónde empezar sin perderte en la promesa tecnológica.
+                  data-es="Quieres usar IA en tu día a día pero no sabes por dónde empezar sin perderte en la promesa tecnológica."
+                  data-en="You want to use AI in your daily life but don't know where to start without getting lost in the hype.">
+              Quieres usar IA en tu día a día pero no sabes por dónde empezar sin perderte en la promesa tecnológica.
             </span>
           </li>
           <li class="flex items-start gap-4">
@@ -281,9 +286,9 @@
               <svg class="w-3 h-3 text-indigo-600" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
             </span>
             <span class="text-base leading-relaxed text-slate-700"
-                  data-es="Tu equipo necesita herramientas simples, no sistemas imposibles de mantener."
-                  data-en="Your team needs simple tools, not systems that are impossible to maintain.">
-              Tu equipo necesita herramientas simples, no sistemas imposibles de mantener.
+                  data-es="Llevas tu presupuesto, tus tareas o tu agenda a mano y sientes que podría ser mucho más simple."
+                  data-en="You manage your budget, tasks, or schedule by hand and feel like it could be so much simpler.">
+              Llevas tu presupuesto, tus tareas o tu agenda a mano y sientes que podría ser mucho más simple.
             </span>
           </li>
           <li class="flex items-start gap-4">
@@ -291,29 +296,9 @@
               <svg class="w-3 h-3 text-indigo-600" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
             </span>
             <span class="text-base leading-relaxed text-slate-700"
-                  data-es="Sientes que usas demasiadas herramientas para resolver problemas que podrían ser simples."
-                  data-en="You feel like you're using too many tools to solve problems that could be simple.">
-              Sientes que usas demasiadas herramientas para resolver problemas que podrían ser simples.
-            </span>
-          </li>
-          <li class="flex items-start gap-4">
-            <span class="mt-0.5 w-5 h-5 bg-indigo-100 rounded-full flex-shrink-0 flex items-center justify-center">
-              <svg class="w-3 h-3 text-indigo-600" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-            </span>
-            <span class="text-base leading-relaxed text-slate-700"
-                  data-es="Llevas tu presupuesto personal en un cuaderno o en tu cabeza y quieres una forma más clara de saber a dónde se va tu dinero cada mes."
-                  data-en="You track your personal budget in a notebook or in your head and want a clearer, simpler way to know where your money goes each month.">
-              Llevas tu presupuesto personal en un cuaderno o en tu cabeza y quieres una forma más clara de saber a dónde se va tu dinero cada mes.
-            </span>
-          </li>
-          <li class="flex items-start gap-4">
-            <span class="mt-0.5 w-5 h-5 bg-indigo-100 rounded-full flex-shrink-0 flex items-center justify-center">
-              <svg class="w-3 h-3 text-indigo-600" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-            </span>
-            <span class="text-base leading-relaxed text-slate-700"
-                  data-es="Tienes tareas del día a día que repites una y otra vez — listas, recordatorios, seguimientos — y sientes que ya deberían poder automatizarse."
-                  data-en="You have day-to-day tasks you repeat over and over — lists, reminders, follow-ups — and feel like they should be automated by now.">
-              Tienes tareas del día a día que repites una y otra vez — listas, recordatorios, seguimientos — y sientes que ya deberían poder automatizarse.
+                  data-es="Quieres recuperar tiempo y ahorrar dinero automatizando lo que haces a mano — sin contratar nadie ni pagar licencias costosas."
+                  data-en="You want to save time and money by automating what you do manually — without hiring anyone or paying for expensive software.">
+              Quieres recuperar tiempo y ahorrar dinero automatizando lo que haces a mano — sin contratar nadie ni pagar licencias costosas.
             </span>
           </li>
         </ul>
@@ -412,66 +397,77 @@
     </div>
   </section>
 
-  <!-- ═══ CÓMO TRABAJO ═══ -->
-  <section class="py-12 md:py-24 px-6 bg-slate-900">
+  <!-- ═══ CÓMO FUNCIONA ═══ -->
+  <section id="como-empezamos" class="py-12 md:py-24 px-6 bg-slate-900">
     <div class="max-w-5xl mx-auto">
 
       <div class="mb-14">
         <p class="text-indigo-400 font-semibold text-sm uppercase tracking-widest mb-3"
-           data-es="Mi proceso" data-en="My process">Mi proceso</p>
+           data-es="El proceso" data-en="The process">El proceso</p>
         <h2 class="text-3xl lg:text-4xl font-bold mb-5 text-white">
-          <span data-es="Cómo trabajo" data-en="How I work">Cómo trabajo</span>
+          <span data-es="¿Cómo funciona?" data-en="How does it work?">¿Cómo funciona?</span>
         </h2>
         <p class="text-base leading-relaxed max-w-xl text-slate-400"
-           data-es="No parto de la herramienta. Parto de cómo trabajas, qué te quita tiempo y qué necesitas decidir mejor."
-           data-en="I don't start with the tool. I start with how you work, what takes your time, and what you need to decide better.">
-          No parto de la herramienta. Parto de cómo trabajas, qué te quita tiempo y qué necesitas decidir mejor.
+           data-es="Desde el primer mensaje hasta la entrega. Sin sorpresas y sin depender de mí para mantenerlo."
+           data-en="From your first message to delivery. No surprises, and no depending on me to keep it running.">
+          Desde el primer mensaje hasta la entrega. Sin sorpresas y sin depender de mí para mantenerlo.
         </p>
       </div>
 
-      <div class="process-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px">
+      <div class="process-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px">
 
         <div class="process-cell p-6 md:p-8">
           <div class="text-4xl font-black mb-5 gradient-text">01</div>
           <h3 class="text-base font-bold mb-3 text-white"
-              data-es="Diagnóstico rápido" data-en="Quick diagnosis">Diagnóstico rápido</h3>
+              data-es="Llamada inicial" data-en="Initial call">Llamada inicial</h3>
           <p class="text-sm leading-relaxed text-slate-400"
-             data-es="Entiendo cómo trabajas, qué herramientas usas, dónde pierdes tiempo y qué información te falta para tomar mejores decisiones."
-             data-en="I understand how you work, what tools you use, where you lose time, and what information you're missing to make better decisions.">
-            Entiendo cómo trabajas, qué herramientas usas, dónde pierdes tiempo y qué información te falta para tomar mejores decisiones.
+             data-es="30 minutos sin compromiso. Me cuentas qué quieres resolver y vemos juntos si puedo ayudarte y cómo."
+             data-en="30 minutes, no commitment. You tell me what you want to solve and we see together if and how I can help.">
+            30 minutos sin compromiso. Me cuentas qué quieres resolver y vemos juntos si puedo ayudarte y cómo.
           </p>
         </div>
 
         <div class="process-cell p-6 md:p-8">
           <div class="text-4xl font-black mb-5 gradient-text">02</div>
           <h3 class="text-base font-bold mb-3 text-white"
-              data-es="Diseño de una solución simple" data-en="Simple solution design">Diseño de una solución simple</h3>
+              data-es="Diagnóstico y diseño" data-en="Diagnosis and design">Diagnóstico y diseño</h3>
           <p class="text-sm leading-relaxed text-slate-400"
-             data-es="Propongo un camino claro: qué construir, con qué herramientas y por qué. Sin sobreingeniería ni funcionalidades que no vas a usar."
-             data-en="I propose a clear path: what to build, with which tools, and why. No over-engineering or features you won't use.">
-            Propongo un camino claro: qué construir, con qué herramientas y por qué. Sin sobreingeniería ni funcionalidades que no vas a usar.
+             data-es="Entiendo cómo trabajas, dónde pierdes tiempo y propongo un camino claro: qué construir, con qué y por qué. Sin sobreingeniería."
+             data-en="I understand how you work, where you lose time, and propose a clear path: what to build, with what, and why. No over-engineering.">
+            Entiendo cómo trabajas, dónde pierdes tiempo y propongo un camino claro: qué construir, con qué y por qué. Sin sobreingeniería.
           </p>
         </div>
 
         <div class="process-cell p-6 md:p-8">
           <div class="text-4xl font-black mb-5 gradient-text">03</div>
           <h3 class="text-base font-bold mb-3 text-white"
-              data-es="Construcción contigo" data-en="Building with you">Construcción contigo</h3>
+              data-es="Propuesta clara" data-en="Clear proposal">Propuesta clara</h3>
           <p class="text-sm leading-relaxed text-slate-400"
-             data-es="Trabajo de cerca para que entiendas lo que estamos haciendo. No construyo cajas negras que nadie más puede tocar después."
-             data-en="I work closely with you so you understand what we're building. I don't create black boxes that no one else can touch afterward.">
-            Trabajo de cerca para que entiendas lo que estamos haciendo. No construyo cajas negras que nadie más puede tocar después.
+             data-es="Te presento qué se construirá, en cuánto tiempo y con qué costo. Sin letra chica ni sorpresas de último momento."
+             data-en="I lay out what will be built, in what time frame, and at what cost. No fine print or last-minute surprises.">
+            Te presento qué se construirá, en cuánto tiempo y con qué costo. Sin letra chica ni sorpresas de último momento.
           </p>
         </div>
 
         <div class="process-cell p-6 md:p-8">
           <div class="text-4xl font-black mb-5 gradient-text">04</div>
           <h3 class="text-base font-bold mb-3 text-white"
-              data-es="Entrega usable y documentada" data-en="Usable and documented delivery">Entrega usable y documentada</h3>
+              data-es="Construcción contigo" data-en="Building with you">Construcción contigo</h3>
           <p class="text-sm leading-relaxed text-slate-400"
-             data-es="Cada proyecto termina con algo que puedes usar al día siguiente — con documentación simple para que no dependas de mí para mantenerlo."
-             data-en="Every project ends with something you can use the next day — with simple documentation so you don't depend on me to maintain it.">
-            Cada proyecto termina con algo que puedes usar al día siguiente — con documentación simple para que no dependas de mí para mantenerlo.
+             data-es="Trabajamos juntos para que entiendas cada paso. No construyo cajas negras que nadie más puede tocar después."
+             data-en="We work together so you understand each step. I don't build black boxes that no one else can touch afterward.">
+            Trabajamos juntos para que entiendas cada paso. No construyo cajas negras que nadie más puede tocar después.
+          </p>
+        </div>
+
+        <div class="process-cell p-6 md:p-8">
+          <div class="text-4xl font-black mb-5 gradient-text">05</div>
+          <h3 class="text-base font-bold mb-3 text-white"
+              data-es="Entrega y soporte" data-en="Delivery and support">Entrega y soporte</h3>
+          <p class="text-sm leading-relaxed text-slate-400"
+             data-es="Terminas con algo usable desde el día siguiente, documentación simple y soporte post-entrega. (Disponibilidad y tarifas según los términos del contrato vigente.)"
+             data-en="You leave with something usable from day one, simple documentation, and post-delivery support. (Availability and rates subject to the terms of the current contract.)">
+            Terminas con algo usable desde el día siguiente, documentación simple y soporte post-entrega. <span class="text-slate-500 text-xs">(Disponibilidad y tarifas según los términos del contrato vigente.)</span>
           </p>
         </div>
 
@@ -491,110 +487,145 @@
         </h2>
       </div>
 
-      <div class="space-y-4">
+      <div class="space-y-8">
 
-        <div class="flex flex-col md:grid md:grid-cols-2 rounded-2xl overflow-hidden border border-slate-100">
-          <div class="bg-slate-50 p-5 md:p-7">
-            <p class="text-xs font-bold uppercase tracking-widest mb-4 text-slate-400"
-               data-es="Antes" data-en="Before">Antes</p>
-            <p class="text-sm leading-relaxed text-slate-500"
-               data-es="Reportes semanales armados a mano en Excel. Cada lunes: copiar, pegar, revisar errores, formatear. Una hora y media de trabajo que no aporta ninguna decisión nueva."
-               data-en="Weekly reports built manually in Excel. Every Monday: copy, paste, fix errors, format. An hour and a half of work that adds no new decisions.">
-              Reportes semanales armados a mano en Excel. Cada lunes: copiar, pegar, revisar errores, formatear. Una hora y media de trabajo que no aporta ninguna decisión nueva.
-            </p>
-          </div>
-          <div class="md:hidden flex items-center gap-3 px-5 py-3 bg-indigo-50 border-y border-indigo-100">
-            <div class="h-px flex-1 bg-indigo-200"></div>
-            <svg class="w-4 h-4 text-indigo-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
-            <div class="h-px flex-1 bg-indigo-200"></div>
-          </div>
-          <div class="bg-white p-5 md:p-7">
-            <p class="text-xs font-bold uppercase tracking-widest mb-4 text-indigo-500"
-               data-es="Después" data-en="After">Después</p>
-            <p class="text-sm leading-relaxed text-slate-700"
-               data-es="Dashboard actualizado con estructura clara y visual. El equipo lo revisa en cinco minutos, puede filtrarlo por sí mismo y sabe exactamente qué decisión tomar."
-               data-en="Automatically updated dashboard with a clear, visual structure. The team reviews it in five minutes, can filter it on their own, and knows exactly what decision to make.">
-              Dashboard actualizado con estructura clara y visual. El equipo lo revisa en cinco minutos, puede filtrarlo por sí mismo y sabe exactamente qué decisión tomar.
-            </p>
+        <!-- Caso 1 -->
+        <div>
+          <p class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-3 px-1"
+             data-es="📊 Reportes manuales" data-en="📊 Manual reports">📊 Reportes manuales</p>
+          <div class="flex flex-col md:grid md:grid-cols-2 rounded-2xl overflow-hidden border border-slate-100">
+            <div class="bg-slate-50 p-5 md:p-7">
+              <div class="inline-flex items-center gap-1.5 mb-4">
+                <svg class="w-3.5 h-3.5 text-rose-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z" clip-rule="evenodd"/></svg>
+                <span class="text-xs font-bold uppercase tracking-widest text-rose-400" data-es="Antes" data-en="Before">Antes</span>
+              </div>
+              <p class="text-sm leading-relaxed text-slate-500"
+                 data-es="Reportes semanales armados a mano en Excel. Cada lunes: copiar, pegar, revisar errores, formatear. Una hora y media de trabajo que no aporta ninguna decisión nueva."
+                 data-en="Weekly reports built manually in Excel. Every Monday: copy, paste, fix errors, format. An hour and a half of work that adds no new decisions.">
+                Reportes semanales armados a mano en Excel. Cada lunes: copiar, pegar, revisar errores, formatear. Una hora y media de trabajo que no aporta ninguna decisión nueva.
+              </p>
+            </div>
+            <div class="md:hidden flex items-center gap-3 px-5 py-3 bg-indigo-50 border-y border-indigo-100">
+              <div class="h-px flex-1 bg-indigo-200"></div>
+              <svg class="w-4 h-4 text-indigo-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+              <div class="h-px flex-1 bg-indigo-200"></div>
+            </div>
+            <div class="bg-white p-5 md:p-7">
+              <div class="inline-flex items-center gap-1.5 mb-4">
+                <svg class="w-3.5 h-3.5 text-indigo-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
+                <span class="text-xs font-bold uppercase tracking-widest text-indigo-500" data-es="Después" data-en="After">Después</span>
+              </div>
+              <p class="text-sm leading-relaxed text-slate-700"
+                 data-es="Dashboard actualizado con estructura clara y visual. El equipo lo revisa en cinco minutos, puede filtrarlo por sí mismo y sabe exactamente qué decisión tomar."
+                 data-en="Automatically updated dashboard with a clear, visual structure. The team reviews it in five minutes, can filter it on their own, and knows exactly what decision to make.">
+                Dashboard actualizado con estructura clara y visual. El equipo lo revisa en cinco minutos, puede filtrarlo por sí mismo y sabe exactamente qué decisión tomar.
+              </p>
+            </div>
           </div>
         </div>
 
-        <div class="flex flex-col md:grid md:grid-cols-2 rounded-2xl overflow-hidden border border-slate-100">
-          <div class="bg-slate-50 p-5 md:p-7">
-            <p class="text-xs font-bold uppercase tracking-widest mb-4 text-slate-400"
-               data-es="Antes" data-en="Before">Antes</p>
-            <p class="text-sm leading-relaxed text-slate-500"
-               data-es="Información dispersa entre formularios de Google, hojas de cálculo y correos. Nadie sabe cuál es la versión más reciente de nada. Coordinar toma más tiempo que el trabajo mismo."
-               data-en="Information scattered across Google Forms, spreadsheets, and emails. Nobody knows which is the most recent version of anything. Coordinating takes more time than the actual work.">
-              Información dispersa entre formularios de Google, hojas de cálculo y correos. Nadie sabe cuál es la versión más reciente de nada. Coordinar toma más tiempo que el trabajo mismo.
-            </p>
-          </div>
-          <div class="md:hidden flex items-center gap-3 px-5 py-3 bg-indigo-50 border-y border-indigo-100">
-            <div class="h-px flex-1 bg-indigo-200"></div>
-            <svg class="w-4 h-4 text-indigo-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
-            <div class="h-px flex-1 bg-indigo-200"></div>
-          </div>
-          <div class="bg-white p-5 md:p-7">
-            <p class="text-xs font-bold uppercase tracking-widest mb-4 text-indigo-500"
-               data-es="Después" data-en="After">Después</p>
-            <p class="text-sm leading-relaxed text-slate-700"
-               data-es="Flujo centralizado con una fuente única de verdad. Menos herramientas, menos correos, menos tiempo buscando qué versión es la correcta."
-               data-en="Centralized flow with a single source of truth. Fewer tools, fewer emails, less time searching for which version is the right one.">
-              Flujo centralizado con una fuente única de verdad. Menos herramientas, menos correos, menos tiempo buscando qué versión es la correcta.
-            </p>
-          </div>
-        </div>
-
-        <div class="flex flex-col md:grid md:grid-cols-2 rounded-2xl overflow-hidden border border-slate-100">
-          <div class="bg-slate-50 p-5 md:p-7">
-            <p class="text-xs font-bold uppercase tracking-widest mb-4 text-slate-400"
-               data-es="Antes" data-en="Before">Antes</p>
-            <p class="text-sm leading-relaxed text-slate-500"
-               data-es="Ideas claras para usar IA, pero sin saber si tiene sentido técnico, qué herramienta elegir ni cómo empezar sin romper lo que ya funciona."
-               data-en="Clear ideas for using AI, but no idea if it makes technical sense, which tool to choose, or how to start without breaking what already works.">
-              Ideas claras para usar IA, pero sin saber si tiene sentido técnico, qué herramienta elegir ni cómo empezar sin romper lo que ya funciona.
-            </p>
-          </div>
-          <div class="md:hidden flex items-center gap-3 px-5 py-3 bg-indigo-50 border-y border-indigo-100">
-            <div class="h-px flex-1 bg-indigo-200"></div>
-            <svg class="w-4 h-4 text-indigo-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
-            <div class="h-px flex-1 bg-indigo-200"></div>
-          </div>
-          <div class="bg-white p-5 md:p-7">
-            <p class="text-xs font-bold uppercase tracking-widest mb-4 text-indigo-500"
-               data-es="Después" data-en="After">Después</p>
-            <p class="text-sm leading-relaxed text-slate-700"
-               data-es="Prototipo funcional, criterios claros para los siguientes pasos y claridad sobre qué vale la pena escalar — y qué no."
-               data-en="Functional prototype, clear criteria for next steps, and clarity about what's worth scaling — and what isn't.">
-              Prototipo funcional, criterios claros para los siguientes pasos y claridad sobre qué vale la pena escalar — y qué no.
-            </p>
+        <!-- Caso 2 -->
+        <div>
+          <p class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-3 px-1"
+             data-es="📁 Información dispersa" data-en="📁 Scattered information">📁 Información dispersa</p>
+          <div class="flex flex-col md:grid md:grid-cols-2 rounded-2xl overflow-hidden border border-slate-100">
+            <div class="bg-slate-50 p-5 md:p-7">
+              <div class="inline-flex items-center gap-1.5 mb-4">
+                <svg class="w-3.5 h-3.5 text-rose-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z" clip-rule="evenodd"/></svg>
+                <span class="text-xs font-bold uppercase tracking-widest text-rose-400" data-es="Antes" data-en="Before">Antes</span>
+              </div>
+              <p class="text-sm leading-relaxed text-slate-500"
+                 data-es="Información dispersa entre formularios de Google, hojas de cálculo y correos. Nadie sabe cuál es la versión más reciente de nada. Coordinar toma más tiempo que el trabajo mismo."
+                 data-en="Information scattered across Google Forms, spreadsheets, and emails. Nobody knows which is the most recent version of anything. Coordinating takes more time than the actual work.">
+                Información dispersa entre formularios de Google, hojas de cálculo y correos. Nadie sabe cuál es la versión más reciente de nada. Coordinar toma más tiempo que el trabajo mismo.
+              </p>
+            </div>
+            <div class="md:hidden flex items-center gap-3 px-5 py-3 bg-indigo-50 border-y border-indigo-100">
+              <div class="h-px flex-1 bg-indigo-200"></div>
+              <svg class="w-4 h-4 text-indigo-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+              <div class="h-px flex-1 bg-indigo-200"></div>
+            </div>
+            <div class="bg-white p-5 md:p-7">
+              <div class="inline-flex items-center gap-1.5 mb-4">
+                <svg class="w-3.5 h-3.5 text-indigo-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
+                <span class="text-xs font-bold uppercase tracking-widest text-indigo-500" data-es="Después" data-en="After">Después</span>
+              </div>
+              <p class="text-sm leading-relaxed text-slate-700"
+                 data-es="Flujo centralizado con una fuente única de verdad. Menos herramientas, menos correos, menos tiempo buscando qué versión es la correcta."
+                 data-en="Centralized flow with a single source of truth. Fewer tools, fewer emails, less time searching for which version is the right one.">
+                Flujo centralizado con una fuente única de verdad. Menos herramientas, menos correos, menos tiempo buscando qué versión es la correcta.
+              </p>
+            </div>
           </div>
         </div>
 
-        <!-- Caso 4: Monitoreo de fuentes -->
-        <div class="flex flex-col md:grid md:grid-cols-2 rounded-2xl overflow-hidden border border-slate-100">
-          <div class="bg-slate-50 p-5 md:p-7">
-            <p class="text-xs font-bold uppercase tracking-widest mb-4 text-slate-400"
-               data-es="Antes" data-en="Before">Antes</p>
-            <p class="text-sm leading-relaxed text-slate-500"
-               data-es="Revisar docenas de fuentes, páginas web y reportes dispersos todos los días, a toda hora. Horas perdidas buscando la misma información en distintos lugares, sin saber si ya estaba actualizada."
-               data-en="Checking dozens of sources, web pages, and scattered reports every day, at all hours. Hours lost searching for the same information in different places, never sure if it was up to date.">
-              Revisar docenas de fuentes, páginas web y reportes dispersos todos los días, a toda hora. Horas perdidas buscando la misma información en distintos lugares, sin saber si ya estaba actualizada.
-            </p>
+        <!-- Caso 3 -->
+        <div>
+          <p class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-3 px-1"
+             data-es="🤖 Proyectos con IA" data-en="🤖 AI projects">🤖 Proyectos con IA</p>
+          <div class="flex flex-col md:grid md:grid-cols-2 rounded-2xl overflow-hidden border border-slate-100">
+            <div class="bg-slate-50 p-5 md:p-7">
+              <div class="inline-flex items-center gap-1.5 mb-4">
+                <svg class="w-3.5 h-3.5 text-rose-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z" clip-rule="evenodd"/></svg>
+                <span class="text-xs font-bold uppercase tracking-widest text-rose-400" data-es="Antes" data-en="Before">Antes</span>
+              </div>
+              <p class="text-sm leading-relaxed text-slate-500"
+                 data-es="Ideas claras para usar IA, pero sin saber si tiene sentido técnico, qué herramienta elegir ni cómo empezar sin romper lo que ya funciona."
+                 data-en="Clear ideas for using AI, but no idea if it makes technical sense, which tool to choose, or how to start without breaking what already works.">
+                Ideas claras para usar IA, pero sin saber si tiene sentido técnico, qué herramienta elegir ni cómo empezar sin romper lo que ya funciona.
+              </p>
+            </div>
+            <div class="md:hidden flex items-center gap-3 px-5 py-3 bg-indigo-50 border-y border-indigo-100">
+              <div class="h-px flex-1 bg-indigo-200"></div>
+              <svg class="w-4 h-4 text-indigo-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+              <div class="h-px flex-1 bg-indigo-200"></div>
+            </div>
+            <div class="bg-white p-5 md:p-7">
+              <div class="inline-flex items-center gap-1.5 mb-4">
+                <svg class="w-3.5 h-3.5 text-indigo-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
+                <span class="text-xs font-bold uppercase tracking-widest text-indigo-500" data-es="Después" data-en="After">Después</span>
+              </div>
+              <p class="text-sm leading-relaxed text-slate-700"
+                 data-es="Prototipo funcional, criterios claros para los siguientes pasos y claridad sobre qué vale la pena escalar — y qué no."
+                 data-en="Functional prototype, clear criteria for next steps, and clarity about what's worth scaling — and what isn't.">
+                Prototipo funcional, criterios claros para los siguientes pasos y claridad sobre qué vale la pena escalar — y qué no.
+              </p>
+            </div>
           </div>
-          <div class="md:hidden flex items-center gap-3 px-5 py-3 bg-indigo-50 border-y border-indigo-100">
-            <div class="h-px flex-1 bg-indigo-200"></div>
-            <svg class="w-4 h-4 text-indigo-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
-            <div class="h-px flex-1 bg-indigo-200"></div>
-          </div>
-          <div class="bg-white p-5 md:p-7">
-            <p class="text-xs font-bold uppercase tracking-widest mb-4 text-indigo-500"
-               data-es="Después" data-en="After">Después</p>
-            <p class="text-sm leading-relaxed text-slate-700"
-               data-es="Un dashboard centralizado que consolida toda esa información en un solo lugar. Lo que antes tomaba días de seguimiento continuo, ahora se revisa en minutos."
-               data-en="A centralized dashboard that brings all that information together in one place. What used to take days of continuous monitoring now takes just minutes to review.">
-              Un dashboard centralizado que consolida toda esa información en un solo lugar. Lo que antes tomaba días de seguimiento continuo, ahora se revisa en minutos.
-            </p>
+        </div>
+
+        <!-- Caso 4 -->
+        <div>
+          <p class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-3 px-1"
+             data-es="🔍 Monitoreo de información" data-en="🔍 Information monitoring">🔍 Monitoreo de información</p>
+          <div class="flex flex-col md:grid md:grid-cols-2 rounded-2xl overflow-hidden border border-slate-100">
+            <div class="bg-slate-50 p-5 md:p-7">
+              <div class="inline-flex items-center gap-1.5 mb-4">
+                <svg class="w-3.5 h-3.5 text-rose-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z" clip-rule="evenodd"/></svg>
+                <span class="text-xs font-bold uppercase tracking-widest text-rose-400" data-es="Antes" data-en="Before">Antes</span>
+              </div>
+              <p class="text-sm leading-relaxed text-slate-500"
+                 data-es="Revisar docenas de fuentes, páginas web y reportes dispersos todos los días, a toda hora. Horas perdidas buscando la misma información en distintos lugares, sin saber si ya estaba actualizada."
+                 data-en="Checking dozens of sources, web pages, and scattered reports every day, at all hours. Hours lost searching for the same information in different places, never sure if it was up to date.">
+                Revisar docenas de fuentes, páginas web y reportes dispersos todos los días, a toda hora. Horas perdidas buscando la misma información en distintos lugares, sin saber si ya estaba actualizada.
+              </p>
+            </div>
+            <div class="md:hidden flex items-center gap-3 px-5 py-3 bg-indigo-50 border-y border-indigo-100">
+              <div class="h-px flex-1 bg-indigo-200"></div>
+              <svg class="w-4 h-4 text-indigo-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+              <div class="h-px flex-1 bg-indigo-200"></div>
+            </div>
+            <div class="bg-white p-5 md:p-7">
+              <div class="inline-flex items-center gap-1.5 mb-4">
+                <svg class="w-3.5 h-3.5 text-indigo-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
+                <span class="text-xs font-bold uppercase tracking-widest text-indigo-500" data-es="Después" data-en="After">Después</span>
+              </div>
+              <p class="text-sm leading-relaxed text-slate-700"
+                 data-es="Un dashboard centralizado que consolida toda esa información en un solo lugar. Lo que antes tomaba días de seguimiento continuo, ahora se revisa en minutos."
+                 data-en="A centralized dashboard that brings all that information together in one place. What used to take days of continuous monitoring now takes just minutes to review.">
+                Un dashboard centralizado que consolida toda esa información en un solo lugar. Lo que antes tomaba días de seguimiento continuo, ahora se revisa en minutos.
+              </p>
+            </div>
           </div>
         </div>
 
