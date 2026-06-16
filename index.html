@@ -3,23 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Simplai by Liz — Data & AI for your everyday work</title>
-  <meta name="description" content="I help you turn data, AI, and automation into simple tools that you and your team can actually use — without the complexity." />
+  <title>Simplai by Liz — AI for the tasks that slow you down.</title>
+  <meta name="description" content="I help you automate the small stuff so you can focus on the work that actually matters. No jargon, no hype — just tools that work." />
 
   <!-- Open Graph / WhatsApp / Social preview -->
   <meta property="og:type"        content="website" />
   <meta property="og:url"         content="https://simplaibyliz.com/" />
-  <meta property="og:title"       content="Simplai by Liz — Data & AI for your everyday work" />
-  <meta property="og:description" content="I help you turn data, AI, and automation into simple tools that you and your team can actually use — without the complexity." />
+  <meta property="og:title"       content="Simplai by Liz — AI for the tasks that slow you down." />
+  <meta property="og:description" content="I help you automate the small stuff so you can focus on the work that actually matters. No jargon, no hype — just tools that work." />
   <meta property="og:image"       content="https://simplaibyliz.com/images/og-image.png" />
   <meta property="og:image:alt"   content="Simplai by Liz — AI tools that simplify your everyday life" />
   <meta property="og:locale"      content="en_US" />
 
   <!-- Twitter / X card -->
   <meta name="twitter:card"        content="summary_large_image" />
-  <meta name="twitter:title"       content="Simplai by Liz — Data & AI for your everyday work" />
-  <meta name="twitter:description" content="I help you turn data, AI, and automation into simple tools that you and your team can actually use — without the complexity." />
+  <meta name="twitter:title"       content="Simplai by Liz — AI for the tasks that slow you down." />
+  <meta name="twitter:description" content="I help you automate the small stuff so you can focus on the work that actually matters. No jargon, no hype — just tools that work." />
   <meta name="twitter:image"       content="https://simplaibyliz.com/images/og-image.png" />
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-B23JHDH19X"></script>
   <script>
@@ -34,18 +35,44 @@
 
   <style>
     * { font-family: 'Inter', sans-serif; }
-    html { scroll-behavior: smooth; scroll-padding-top: 210px; }
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
     body { overflow-x: hidden; }
 
+    /* Brand colors */
+    :root {
+      --indigo:      #312E81;
+      --indigo-mid:  #6D64C4;
+      --indigo-dark: #1E1B4B;
+      --lavender:    #EEF0FF;
+      --amber:       #D97706;
+      --amber-light: #FEF3C7;
+      --warm-white:  #F9F8F6;
+    }
+
+    /* Logo wordmark */
+    .logo-simpl { color: #312E81; }
+    .logo-ai    { color: #D97706; }
+    .logo-dot   {
+      display: inline-block;
+      width: 5px; height: 5px;
+      background: #D97706;
+      border-radius: 50%;
+      vertical-align: super;
+      margin-left: 1px;
+      position: relative;
+      top: -2px;
+    }
+    .logo-byliz { color: #9CA3AF; font-weight: 400; letter-spacing: 0.04em; font-size: 0.6em; margin-left: 6px; vertical-align: middle; }
+
     .gradient-text {
-      background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+      background: linear-gradient(135deg, #312E81 0%, #6D64C4 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
 
     .hero-photo-bg {
-      background: linear-gradient(145deg, #eef2ff 0%, #f5f3ff 50%, #fdf4ff 100%);
+      background: linear-gradient(145deg, #EEF0FF 0%, #e8e4ff 50%, #f0ebff 100%);
     }
 
     .card-hover {
@@ -53,9 +80,16 @@
     }
     .card-hover:hover {
       transform: translateY(-2px);
-      box-shadow: 0 12px 40px -8px rgba(99,102,241,0.15);
+      box-shadow: 0 12px 40px -8px rgba(49,46,129,0.12);
       border-color: #c7d2fe;
     }
+
+    /* Amber accent line on card hover */
+    .card-accent {
+      border-top: 3px solid transparent;
+      transition: border-color 0.2s ease;
+    }
+    .card-accent:hover { border-top-color: #D97706; }
 
     /* WhatsApp float */
     .wa-float {
@@ -82,9 +116,9 @@
 
     /* Liz note */
     .liz-note {
-      border-left: 3px solid #818cf8;
+      border-left: 3px solid #6D64C4;
       padding: 16px 20px;
-      background: #eef2ff;
+      background: #EEF0FF;
       border-radius: 0 10px 10px 0;
     }
 
@@ -94,9 +128,16 @@
     .faq-chevron { transition: transform 0.28s ease; flex-shrink: 0; }
     .faq-chevron.open { transform: rotate(180deg); }
 
-    /* Process grid dividers */
-    .process-grid { background: rgba(255,255,255,0.08); border-radius: 16px; overflow: hidden; }
-    .process-cell { background: #0f172a; }
+    /* Process steps */
+    .process-step-num {
+      font-size: 2.5rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #312E81 0%, #6D64C4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+    }
 
     /* Mobile menu */
     #mobile-menu {
@@ -109,17 +150,25 @@
 
     /* Focus visible */
     a:focus-visible, button:focus-visible {
-      outline: 2px solid #6366f1;
+      outline: 2px solid #312E81;
       outline-offset: 2px;
       border-radius: 4px;
+    }
+
+    /* Amber tag pill */
+    .amber-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: #FEF3C7; color: #92400E;
+      font-size: 12px; font-weight: 600;
+      padding: 4px 12px; border-radius: 999px;
     }
   </style>
 </head>
 
-<body class="bg-white text-slate-900 antialiased">
+<body class="antialiased" style="background-color: #F9F8F6; color: #111827;">
 
   <!-- ═══ FLOATING WHATSAPP ═══ -->
-  <a href="https://wa.me/573172866192" target="_blank" rel="noopener" class="wa-float" aria-label="Contactar por WhatsApp">
+  <a href="https://wa.me/573172866192" target="_blank" rel="noopener" class="wa-float" aria-label="Contact via WhatsApp">
     <svg width="24" height="24" fill="white" viewBox="0 0 24 24" aria-hidden="true">
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
     </svg>
@@ -131,22 +180,25 @@
   <!-- ═══ MOBILE MENU PANEL ═══ -->
   <div id="mobile-menu" class="fixed top-0 right-0 bottom-0 z-50 w-72 bg-white shadow-2xl flex flex-col">
     <div class="flex items-center justify-between px-6 py-5 border-b border-slate-100">
-      <img src="images/Logo cuadrado.png" alt="Simplai by Liz" class="h-40 w-auto" />
+      <span class="font-bold text-xl tracking-tight select-none">
+        <span class="logo-simpl">simpl</span><span class="logo-ai">ai</span><span class="logo-dot"></span><span class="logo-byliz">by Liz</span>
+      </span>
       <button onclick="closeMobileMenu()" class="p-2 -mr-2 text-slate-500 hover:text-slate-900 transition-colors" aria-label="Close menu">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
       </button>
     </div>
     <nav class="flex-1 px-6 py-8 flex flex-col gap-6">
-      <a href="#"              onclick="closeMobileMenu()" class="text-base font-medium text-slate-700 hover:text-indigo-600 transition-colors" data-es="Inicio"          data-en="Home">Home</a>
-      <a href="#para-ti"       onclick="closeMobileMenu()" class="text-base font-medium text-slate-700 hover:text-indigo-600 transition-colors" data-es="Para ti"         data-en="For you">For you</a>
-      <a href="#servicios"     onclick="closeMobileMenu()" class="text-base font-medium text-slate-700 hover:text-indigo-600 transition-colors" data-es="Servicios"       data-en="Services">Services</a>
-      <a href="#como-empezamos" onclick="closeMobileMenu()" class="text-base font-medium text-slate-700 hover:text-indigo-600 transition-colors" data-es="Cómo empezamos" data-en="How we start">How we start</a>
-      <a href="#sobre-mi"      onclick="closeMobileMenu()" class="text-base font-medium text-slate-700 hover:text-indigo-600 transition-colors" data-es="Sobre mí"        data-en="About">About</a>
+      <a href="#"               onclick="closeMobileMenu()" class="text-base font-medium text-slate-700 hover:text-indigo-900 transition-colors" data-es="Inicio"           data-en="Home">Home</a>
+      <a href="#para-ti"        onclick="closeMobileMenu()" class="text-base font-medium text-slate-700 hover:text-indigo-900 transition-colors" data-es="Para ti"          data-en="For you">For you</a>
+      <a href="#servicios"      onclick="closeMobileMenu()" class="text-base font-medium text-slate-700 hover:text-indigo-900 transition-colors" data-es="Servicios"        data-en="Services">Services</a>
+      <a href="#como-empezamos" onclick="closeMobileMenu()" class="text-base font-medium text-slate-700 hover:text-indigo-900 transition-colors" data-es="Cómo empezamos"   data-en="How we start">How we start</a>
+      <a href="#sobre-mi"       onclick="closeMobileMenu()" class="text-base font-medium text-slate-700 hover:text-indigo-900 transition-colors" data-es="Sobre mí"         data-en="About">About</a>
     </nav>
     <div class="px-6 pb-8 pt-4 border-t border-slate-100">
-      <!-- lang toggle removed from menu — now always visible in nav -->
       <a href="#contacto" onclick="closeMobileMenu()"
-         class="block w-full bg-indigo-600 text-white text-center font-semibold px-6 py-3.5 rounded-full hover:bg-indigo-700 transition-colors"
+         class="block w-full text-white text-center font-semibold px-6 py-3.5 rounded-full transition-colors"
+         style="background:#312E81;"
+         onmouseover="this.style.background='#1E1B4B'" onmouseout="this.style.background='#312E81'"
          data-es="Hablemos" data-en="Let's talk">Let's talk</a>
     </div>
   </div>
@@ -155,17 +207,30 @@
   <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 transition-shadow duration-300">
     <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
 
-      <a href="#" class="select-none">
-        <img src="images/Logo cuadrado.png" alt="Simplai by Liz" class="h-40 w-auto" />
+      <a href="#" class="select-none font-bold text-2xl tracking-tight">
+        <span class="logo-simpl">simpl</span><span class="logo-ai">ai</span><span class="logo-dot"></span><span class="logo-byliz">by Liz</span>
       </a>
 
-      <!-- Lang toggle + Hamburger — always visible -->
+      <!-- Desktop nav links -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#para-ti"        class="text-sm font-medium text-slate-600 hover:text-indigo-900 transition-colors" data-es="Para ti"        data-en="For you">For you</a>
+        <a href="#servicios"      class="text-sm font-medium text-slate-600 hover:text-indigo-900 transition-colors" data-es="Servicios"      data-en="Services">Services</a>
+        <a href="#como-empezamos" class="text-sm font-medium text-slate-600 hover:text-indigo-900 transition-colors" data-es="Cómo empezamos" data-en="How we start">How we start</a>
+        <a href="#sobre-mi"       class="text-sm font-medium text-slate-600 hover:text-indigo-900 transition-colors" data-es="Sobre mí"       data-en="About">About</a>
+      </div>
+
+      <!-- Lang toggle + CTA + Hamburger -->
       <div class="flex items-center gap-3">
         <div class="lang-toggle">
           <button id="btn-es" onclick="setLang('es')">ES</button>
           <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
         </div>
-        <button onclick="openMobileMenu()" class="p-2 -mr-2 text-slate-700 hover:text-indigo-600 transition-colors" aria-label="Abrir menú">
+        <a href="#contacto"
+           class="hidden md:inline-flex items-center text-sm font-semibold text-white px-5 py-2 rounded-full transition-colors"
+           style="background:#312E81;"
+           onmouseover="this.style.background='#1E1B4B'" onmouseout="this.style.background='#312E81'"
+           data-es="Hablemos" data-en="Let's talk">Let's talk</a>
+        <button onclick="openMobileMenu()" class="md:hidden p-2 -mr-2 text-slate-700 hover:text-indigo-900 transition-colors" aria-label="Open menu">
           <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
           </svg>
@@ -176,26 +241,26 @@
   </nav>
 
   <!-- ═══ HERO ═══ -->
-  <section class="pt-56 pb-12 md:pb-24 px-6">
+  <section class="pt-32 pb-12 md:pb-24 px-6">
     <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-14 lg:gap-20 items-center">
 
       <!-- Text -->
       <div>
-        <div class="inline-flex items-center gap-2 bg-indigo-50 text-indigo-700 text-sm font-medium px-4 py-2 rounded-full mb-8">
-          <span class="w-2 h-2 bg-indigo-500 rounded-full animate-pulse"></span>
-          <span data-es="Consultoría independiente · Español & English"
-                data-en="Independent consulting · Español & English">Consultoría independiente · Español & English</span>
+        <div class="amber-tag mb-8">
+          <span class="w-2 h-2 rounded-full animate-pulse" style="background:#D97706;"></span>
+          <span data-es="Consultoría independiente · Español &amp; English"
+                data-en="Independent consulting · Español &amp; English">Independent consulting · Español &amp; English</span>
         </div>
 
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl xl:text-[3.4rem] font-bold leading-[1.08] tracking-tight mb-7">
-          <span data-es="Deja de pelear con reportes, hojas de cálculo y procesos manuales"
-                data-en="Stop wrestling with reports, spreadsheets, and manual processes">Deja de pelear con reportes, hojas de cálculo y procesos manuales</span>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl xl:text-[3.2rem] font-bold leading-[1.08] tracking-tight mb-7" style="color:#111827;">
+          <span data-es="Deja de perder tiempo en tareas que podrías automatizar"
+                data-en="Stop wasting time on tasks you could automate">Stop wasting time on tasks you could automate</span>
         </h1>
 
-        <p class="text-lg md:text-xl text-slate-500 leading-relaxed mb-9 max-w-lg">
-          <span data-es="Soy Liz. Te ayudo a transformar datos, IA y automatización en herramientas simples que tú y tu equipo sí puedan usar, sin depender de soluciones complicadas."
-                data-en="I'm Liz. I help you turn data, AI, and automation into simple tools that you and your team can actually use, without relying on complicated systems.">
-            Soy Liz. Te ayudo a transformar datos, IA y automatización en herramientas simples que tú y tu equipo sí puedan usar, sin depender de soluciones complicadas.
+        <p class="text-lg md:text-xl leading-relaxed mb-9 max-w-lg" style="color:#6B7280;">
+          <span data-es="Soy Liz. Te ayudo a automatizar lo que te quita tiempo — reportes, correos, seguimientos, documentos — para que puedas enfocarte en lo que de verdad importa. Sin tecnología complicada."
+                data-en="I'm Liz. I help you automate the small stuff — reports, follow-ups, scheduling, document chaos — so you can focus on the work that actually matters. No complicated tech.">
+            I'm Liz. I help you automate the small stuff — reports, follow-ups, scheduling, document chaos — so you can focus on the work that actually matters. No complicated tech.
           </span>
         </p>
 
@@ -206,15 +271,17 @@
             WhatsApp
           </a>
           <a href="mailto:simpleai@gmail.com"
-             class="inline-flex items-center justify-center gap-2.5 border border-slate-200 text-slate-700 font-semibold px-7 py-3.5 rounded-full hover:border-indigo-300 hover:text-indigo-700 transition-colors">
+             class="inline-flex items-center justify-center gap-2.5 border border-slate-200 font-semibold px-7 py-3.5 rounded-full transition-colors"
+             style="color:#312E81;"
+             onmouseover="this.style.borderColor='#6D64C4'" onmouseout="this.style.borderColor='#e2e8f0'">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
             Email
           </a>
         </div>
 
-        <p class="text-sm text-slate-400">
+        <p class="text-sm" style="color:#9CA3AF;">
           <span data-es="→ Primera conversación sin compromiso."
-                data-en="→ First conversation, no strings attached.">→ Primera conversación sin compromiso.</span>
+                data-en="→ First conversation, no strings attached.">→ First conversation, no strings attached.</span>
         </p>
       </div>
 
@@ -222,17 +289,21 @@
       <div class="flex justify-center lg:justify-end">
         <div class="relative">
           <div class="w-[280px] h-[360px] sm:w-[300px] sm:h-[400px] lg:w-[380px] lg:h-[500px] rounded-3xl overflow-hidden hero-photo-bg">
-            <img src="images/liz2.png" alt="Liz — consultora en datos e IA"
+            <img src="images/liz2.png" alt="Liz — AI automation consultant"
                  class="w-full h-full object-cover object-top" />
           </div>
+          <!-- Floating badge -->
           <div class="absolute -bottom-5 -left-4 bg-white rounded-2xl shadow-xl border border-slate-100 px-4 py-3 sm:px-5 sm:py-3.5">
-            <div class="text-xs text-slate-400 mb-0.5 font-medium uppercase tracking-wide"
-                 data-es="Especialidad" data-en="Specialty">Especialidad</div>
-            <div class="font-semibold text-slate-900 text-xs sm:text-sm"
-                 data-es="Datos · IA · Automatización" data-en="Data · AI · Automation">Datos · IA · Automatización</div>
+            <div class="text-xs mb-0.5 font-semibold uppercase tracking-wide" style="color:#9CA3AF;"
+                 data-es="Especialidad" data-en="Specialty">Specialty</div>
+            <div class="font-semibold text-xs sm:text-sm" style="color:#312E81;"
+                 data-es="IA · Automatización · Simplificación" data-en="AI · Automation · Simplification">AI · Automation · Simplification</div>
           </div>
-          <div class="absolute -top-3 -right-3 w-14 h-14 sm:w-16 sm:h-16 bg-indigo-100 rounded-full opacity-60"></div>
-          <div class="absolute top-8 -right-4 w-7 h-7 sm:w-8 sm:h-8 bg-violet-200 rounded-full opacity-50"></div>
+          <!-- Decorative circles -->
+          <div class="absolute -top-3 -right-3 w-14 h-14 sm:w-16 sm:h-16 rounded-full opacity-40" style="background:#EEF0FF;"></div>
+          <div class="absolute top-8 -right-4 w-7 h-7 sm:w-8 sm:h-8 rounded-full opacity-50" style="background:#FEF3C7;"></div>
+          <!-- Amber dot accent -->
+          <div class="absolute -top-1 -right-1 w-4 h-4 rounded-full" style="background:#D97706; opacity:0.7;"></div>
         </div>
       </div>
 
@@ -240,65 +311,65 @@
   </section>
 
   <!-- ═══ ESTO ES PARA TI SI… ═══ -->
-  <section id="para-ti" class="py-12 md:py-24 px-6 bg-slate-50">
+  <section id="para-ti" class="py-12 md:py-24 px-6" style="background:#EEF0FF;">
     <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-14 items-start">
 
       <div>
-        <p class="text-indigo-600 font-semibold text-sm uppercase tracking-widest mb-3"
-           data-es="¿Es esto para ti?" data-en="Is this for you?">¿Es esto para ti?</p>
-        <h2 class="text-3xl lg:text-4xl font-bold mb-10">
-          <span data-es="Esto es para ti si…" data-en="This is for you if…">Esto es para ti si…</span>
+        <p class="font-semibold text-sm uppercase tracking-widest mb-3" style="color:#6D64C4;"
+           data-es="¿Es esto para ti?" data-en="Is this for you?">Is this for you?</p>
+        <h2 class="text-3xl lg:text-4xl font-bold mb-10" style="color:#312E81;">
+          <span data-es="Esto es para ti si…" data-en="This is for you if…">This is for you if…</span>
         </h2>
 
         <ul class="space-y-5">
           <li class="flex items-start gap-4">
-            <span class="mt-0.5 w-5 h-5 bg-indigo-100 rounded-full flex-shrink-0 flex items-center justify-center">
-              <svg class="w-3 h-3 text-indigo-600" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <span class="mt-0.5 w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center" style="background:#312E81;">
+              <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
             </span>
-            <span class="text-base leading-relaxed text-slate-700"
+            <span class="text-base leading-relaxed" style="color:#374151;"
                   data-es="Actualizas reportes, hojas o listas manualmente cada semana y ya estás cansado de hacerlo."
-                  data-en="You update reports, sheets, or lists manually every week and you're tired of doing it.">
-              Actualizas reportes, hojas o listas manualmente cada semana y ya estás cansado de hacerlo.
+                  data-en="You update reports, spreadsheets, or lists manually every week and you're tired of doing it.">
+              You update reports, spreadsheets, or lists manually every week and you're tired of doing it.
             </span>
           </li>
           <li class="flex items-start gap-4">
-            <span class="mt-0.5 w-5 h-5 bg-indigo-100 rounded-full flex-shrink-0 flex items-center justify-center">
-              <svg class="w-3 h-3 text-indigo-600" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <span class="mt-0.5 w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center" style="background:#312E81;">
+              <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
             </span>
-            <span class="text-base leading-relaxed text-slate-700"
-                  data-es="Tienes información — de trabajo o personal — pero no sabes cómo usarla para tomar mejores decisiones."
-                  data-en="You have information — work or personal — but don't know how to use it to make better decisions.">
-              Tienes información — de trabajo o personal — pero no sabes cómo usarla para tomar mejores decisiones.
-            </span>
-          </li>
-          <li class="flex items-start gap-4">
-            <span class="mt-0.5 w-5 h-5 bg-indigo-100 rounded-full flex-shrink-0 flex items-center justify-center">
-              <svg class="w-3 h-3 text-indigo-600" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-            </span>
-            <span class="text-base leading-relaxed text-slate-700"
+            <span class="text-base leading-relaxed" style="color:#374151;"
                   data-es="Quieres usar IA en tu día a día pero no sabes por dónde empezar sin perderte en la promesa tecnológica."
                   data-en="You want to use AI in your daily life but don't know where to start without getting lost in the hype.">
-              Quieres usar IA en tu día a día pero no sabes por dónde empezar sin perderte en la promesa tecnológica.
+              You want to use AI in your daily life but don't know where to start without getting lost in the hype.
             </span>
           </li>
           <li class="flex items-start gap-4">
-            <span class="mt-0.5 w-5 h-5 bg-indigo-100 rounded-full flex-shrink-0 flex items-center justify-center">
-              <svg class="w-3 h-3 text-indigo-600" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <span class="mt-0.5 w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center" style="background:#312E81;">
+              <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
             </span>
-            <span class="text-base leading-relaxed text-slate-700"
+            <span class="text-base leading-relaxed" style="color:#374151;"
                   data-es="Llevas tu presupuesto, tus tareas o tu agenda a mano y sientes que podría ser mucho más simple."
                   data-en="You manage your budget, tasks, or schedule by hand and feel like it could be so much simpler.">
-              Llevas tu presupuesto, tus tareas o tu agenda a mano y sientes que podría ser mucho más simple.
+              You manage your budget, tasks, or schedule by hand and feel like it could be so much simpler.
             </span>
           </li>
           <li class="flex items-start gap-4">
-            <span class="mt-0.5 w-5 h-5 bg-indigo-100 rounded-full flex-shrink-0 flex items-center justify-center">
-              <svg class="w-3 h-3 text-indigo-600" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <span class="mt-0.5 w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center" style="background:#312E81;">
+              <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
             </span>
-            <span class="text-base leading-relaxed text-slate-700"
+            <span class="text-base leading-relaxed" style="color:#374151;"
+                  data-es="Tienes información dispersa y nadie tiene tiempo de organizarla o interpretarla."
+                  data-en="You have information scattered everywhere and nobody has time to organize or make sense of it.">
+              You have information scattered everywhere and nobody has time to organize or make sense of it.
+            </span>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="mt-0.5 w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center" style="background:#312E81;">
+              <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            </span>
+            <span class="text-base leading-relaxed" style="color:#374151;"
                   data-es="Quieres recuperar tiempo y ahorrar dinero automatizando lo que haces a mano — sin contratar nadie ni pagar licencias costosas."
                   data-en="You want to save time and money by automating what you do manually — without hiring anyone or paying for expensive software.">
-              Quieres recuperar tiempo y ahorrar dinero automatizando lo que haces a mano — sin contratar nadie ni pagar licencias costosas.
+              You want to save time and money by automating what you do manually — without hiring anyone or paying for expensive software.
             </span>
           </li>
         </ul>
@@ -307,16 +378,16 @@
       <!-- Liz note -->
       <div class="mt-8 lg:mt-0 lg:pt-20">
         <div class="liz-note">
-          <p class="text-xs font-bold uppercase tracking-widest mb-3 text-indigo-500">
-            <span data-es="Lo que suelo ver" data-en="What I usually see">Lo que suelo ver</span>
+          <p class="text-xs font-bold uppercase tracking-widest mb-3" style="color:#6D64C4;">
+            <span data-es="Lo que suelo ver" data-en="What I usually see">What I usually see</span>
           </p>
-          <p class="text-sm leading-relaxed text-slate-600 italic">
-            <span data-es="&ldquo;La mayoría de mis clientes no tienen un problema de datos. Tienen un problema de claridad: no saben qué pregunta hacerle a los datos que ya tienen.&rdquo;"
-                  data-en="&ldquo;Most of my clients don't have a data problem. They have a clarity problem: they don't know what question to ask of the data they already have.&rdquo;">
-              &ldquo;La mayoría de mis clientes no tienen un problema de datos. Tienen un problema de claridad: no saben qué pregunta hacerle a los datos que ya tienen.&rdquo;
+          <p class="text-sm leading-relaxed italic" style="color:#374151;">
+            <span data-es="&ldquo;La mayoría de mis clientes no tienen un problema de datos. Tienen un problema de claridad: no saben qué pregunta hacerle a lo que ya tienen.&rdquo;"
+                  data-en="&ldquo;Most of my clients don't have a data problem. They have a clarity problem: they don't know what question to ask of what they already have.&rdquo;">
+              &ldquo;Most of my clients don't have a data problem. They have a clarity problem: they don't know what question to ask of what they already have.&rdquo;
             </span>
           </p>
-          <p class="text-xs font-bold mt-3 text-indigo-500">— Liz</p>
+          <p class="text-xs font-bold mt-3" style="color:#6D64C4;">— Liz</p>
         </div>
       </div>
 
@@ -328,68 +399,73 @@
     <div class="max-w-6xl mx-auto">
 
       <div class="text-center mb-14">
-        <p class="text-indigo-600 font-semibold text-sm uppercase tracking-widest mb-3"
-           data-es="Servicios" data-en="Services">Servicios</p>
-        <h2 class="text-3xl lg:text-4xl font-bold mb-4">
-          <span data-es="¿En qué puedo ayudarte?" data-en="How can I help you?">¿En qué puedo ayudarte?</span>
+        <p class="font-semibold text-sm uppercase tracking-widest mb-3" style="color:#6D64C4;"
+           data-es="Servicios" data-en="Services">Services</p>
+        <h2 class="text-3xl lg:text-4xl font-bold mb-4" style="color:#312E81;">
+          <span data-es="¿En qué puedo ayudarte?" data-en="How can I help you?">How can I help you?</span>
         </h2>
+        <p class="text-base max-w-xl mx-auto" style="color:#6B7280;"
+           data-es="Trabajo con cualquier persona que tenga tareas repetitivas — no solo con quienes trabajan con datos."
+           data-en="I work with anyone who has repetitive tasks — not just people who work with data.">
+          I work with anyone who has repetitive tasks — not just people who work with data.
+        </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
 
-        <!-- Dashboards -->
-        <div class="bg-white rounded-2xl p-5 md:p-8 border border-slate-100 card-hover">
-          <div class="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center mb-5">
-            <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
-          </div>
-          <h3 class="text-xl font-semibold mb-3"
-              data-es="Dashboards que sí se usan" data-en="Dashboards you'll actually use">Dashboards que sí se usan</h3>
-          <p class="text-slate-500 leading-relaxed text-sm"
-             data-es="El problema no es que no tengas datos. Es que los tienes en cinco lugares distintos y nadie tiene tiempo de interpretarlos. Te construyo un tablero claro, enfocado y tan simple que cualquiera en tu equipo puede abrirlo y entender qué está pasando, sin depender de ti."
-             data-en="The problem isn't that you don't have data. It's that you have it in five different places and no one has time to interpret it. I build you a clear, focused dashboard so simple that anyone on your team can open it and understand what's happening, without depending on you.">
-            El problema no es que no tengas datos. Es que los tienes en cinco lugares distintos y nadie tiene tiempo de interpretarlos. Te construyo un tablero claro, enfocado y tan simple que cualquiera en tu equipo puede abrirlo y entender qué está pasando, sin depender de ti.
-          </p>
-        </div>
-
         <!-- Automatización -->
-        <div class="bg-white rounded-2xl p-5 md:p-8 border border-slate-100 card-hover">
-          <div class="w-12 h-12 bg-violet-50 rounded-xl flex items-center justify-center mb-5">
-            <svg class="w-6 h-6 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        <div class="bg-white rounded-2xl p-5 md:p-8 border border-slate-100 card-hover card-accent">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background:#EEF0FF;">
+            <svg class="w-6 h-6" style="color:#312E81;" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
           </div>
-          <h3 class="text-xl font-semibold mb-3"
-              data-es="Automatización de tareas repetitivas" data-en="Automating repetitive tasks">Automatización de tareas repetitivas</h3>
-          <p class="text-slate-500 leading-relaxed text-sm"
-             data-es="Si estás copiando datos, enviando correos o consolidando hojas cada semana — eso puede automatizarse. Te ayudo a identificar exactamente qué y cómo, con herramientas que no requieren soporte técnico permanente."
-             data-en="If you're copying data, sending emails, or consolidating sheets every week — that can be automated. I help you identify exactly what and how, with tools that don't require permanent technical support.">
-            Si estás copiando datos, enviando correos o consolidando hojas cada semana — eso puede automatizarse. Te ayudo a identificar exactamente qué y cómo, con herramientas que no requieren soporte técnico permanente.
+          <h3 class="text-xl font-semibold mb-3" style="color:#111827;"
+              data-es="Automatización de tareas repetitivas" data-en="Automating repetitive tasks">Automating repetitive tasks</h3>
+          <p class="leading-relaxed text-sm" style="color:#6B7280;"
+             data-es="Si estás haciendo lo mismo cada semana — copiar datos, enviar correos, actualizar hojas — eso puede automatizarse. Te ayudo a identificar qué y cómo, con herramientas que no requieren soporte técnico permanente."
+             data-en="If you're doing the same thing every week — copying data, sending emails, updating spreadsheets — it can be automated. I help you identify exactly what and how, with tools that don't require permanent tech support.">
+            If you're doing the same thing every week — copying data, sending emails, updating spreadsheets — it can be automated. I help you identify exactly what and how, with tools that don't require permanent tech support.
           </p>
         </div>
 
-        <!-- Procesos -->
-        <div class="bg-white rounded-2xl p-5 md:p-8 border border-slate-100 card-hover">
-          <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center mb-5">
-            <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+        <!-- IA Tools -->
+        <div class="bg-white rounded-2xl p-5 md:p-8 border border-slate-100 card-hover card-accent">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background:#FEF3C7;">
+            <svg class="w-6 h-6" style="color:#D97706;" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-4l-4 4z"/></svg>
           </div>
-          <h3 class="text-xl font-semibold mb-3"
-              data-es="Procesos de trabajo más simples" data-en="Simpler work processes">Procesos de trabajo más simples</h3>
-          <p class="text-slate-500 leading-relaxed text-sm"
-             data-es="A veces el problema no es que falten herramientas, sino que hay demasiadas mal conectadas. Analizo cómo trabajas y propongo un sistema más ágil: menos pasos, menos fricción, más claridad sobre quién hace qué."
-             data-en="Sometimes the problem isn't a lack of tools, but too many poorly connected ones. I analyze how you work and propose a more agile system: fewer steps, less friction, more clarity on who does what.">
-            A veces el problema no es que falten herramientas, sino que hay demasiadas mal conectadas. Analizo cómo trabajas y propongo un sistema más ágil: menos pasos, menos fricción, más claridad sobre quién hace qué.
+          <h3 class="text-xl font-semibold mb-3" style="color:#111827;"
+              data-es="Herramientas con IA para tu flujo de trabajo" data-en="AI tools for your workflow">AI tools for your workflow</h3>
+          <p class="leading-relaxed text-sm" style="color:#6B7280;"
+             data-es="Configuro asistentes de IA que de verdad entienden tu contexto: tus clientes, tus plantillas, tu forma de trabajar. Como tener a alguien disponible todo el tiempo que nunca olvida nada."
+             data-en="I set up AI assistants that actually understand your context — your clients, your templates, your way of working. Think of it as a team member who's always available and never forgets.">
+            I set up AI assistants that actually understand your context — your clients, your templates, your way of working. Think of it as a team member who's always available and never forgets.
           </p>
         </div>
 
-        <!-- IA advisory -->
-        <div class="bg-white rounded-2xl p-5 md:p-8 border border-slate-100 card-hover">
-          <div class="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center mb-5">
-            <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-4l-4 4z"/></svg>
+        <!-- Dashboards -->
+        <div class="bg-white rounded-2xl p-5 md:p-8 border border-slate-100 card-hover card-accent">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background:#EEF0FF;">
+            <svg class="w-6 h-6" style="color:#312E81;" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
           </div>
-          <h3 class="text-xl font-semibold mb-3"
-              data-es="Acompañamiento en proyectos con IA" data-en="AI project advisory">Acompañamiento en proyectos con IA</h3>
-          <p class="text-slate-500 leading-relaxed text-sm"
-             data-es="¿Tienes una idea para usar IA en tu trabajo pero no sabes si tiene sentido, qué herramienta elegir o cómo empezar? Te ayudo a evaluar, diseñar y prototipar — sin promesas vacías y con criterios claros para decidir los siguientes pasos."
-             data-en="Do you have an idea for using AI in your work but don't know if it makes sense, which tool to choose, or how to start? I help you evaluate, design, and prototype — no empty promises and with clear criteria for deciding next steps.">
-            ¿Tienes una idea para usar IA en tu trabajo pero no sabes si tiene sentido, qué herramienta elegir o cómo empezar? Te ayudo a evaluar, diseñar y prototipar — sin promesas vacías y con criterios claros para decidir los siguientes pasos.
+          <h3 class="text-xl font-semibold mb-3" style="color:#111827;"
+              data-es="Dashboards que sí se usan" data-en="Dashboards you'll actually use">Dashboards you'll actually use</h3>
+          <p class="leading-relaxed text-sm" style="color:#6B7280;"
+             data-es="Un solo lugar donde ver lo que está pasando en tu negocio — actualizado automáticamente. Sin buscar entre archivos ni depender de alguien que te explique los números."
+             data-en="One place to see what's happening in your business, updated automatically. No digging through files, no depending on someone to explain the numbers.">
+            One place to see what's happening in your business, updated automatically. No digging through files, no depending on someone to explain the numbers.
+          </p>
+        </div>
+
+        <!-- Simplificación -->
+        <div class="bg-white rounded-2xl p-5 md:p-8 border border-slate-100 card-hover card-accent">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background:#EEF0FF;">
+            <svg class="w-6 h-6" style="color:#312E81;" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3" style="color:#111827;"
+              data-es="Procesos más simples" data-en="Simpler processes">Simpler processes</h3>
+          <p class="leading-relaxed text-sm" style="color:#6B7280;"
+             data-es="A veces la respuesta no es una herramienta nueva — es quitar dos que ya tienes. Analizo cómo trabajas y propongo un sistema más ágil: menos pasos, menos fricción, más claridad."
+             data-en="Sometimes the answer isn't another tool — it's removing two you already have. I look at how you work and propose a leaner system: fewer steps, less friction, more clarity.">
+            Sometimes the answer isn't another tool — it's removing two you already have. I look at how you work and propose a leaner system: fewer steps, less friction, more clarity.
           </p>
         </div>
 
@@ -398,76 +474,76 @@
   </section>
 
   <!-- ═══ CÓMO FUNCIONA ═══ -->
-  <section id="como-empezamos" class="py-12 md:py-24 px-6 bg-slate-900">
+  <section id="como-empezamos" class="py-12 md:py-24 px-6" style="background:#1E1B4B;">
     <div class="max-w-5xl mx-auto">
 
       <div class="mb-14">
-        <p class="text-indigo-400 font-semibold text-sm uppercase tracking-widest mb-3"
-           data-es="El proceso" data-en="The process">El proceso</p>
+        <p class="font-semibold text-sm uppercase tracking-widest mb-3" style="color:#6D64C4;"
+           data-es="El proceso" data-en="The process">The process</p>
         <h2 class="text-3xl lg:text-4xl font-bold mb-5 text-white">
-          <span data-es="¿Cómo funciona?" data-en="How does it work?">¿Cómo funciona?</span>
+          <span data-es="¿Cómo funciona?" data-en="How does it work?">How does it work?</span>
         </h2>
-        <p class="text-base leading-relaxed max-w-xl text-slate-400"
+        <p class="text-base leading-relaxed max-w-xl" style="color:#94A3B8;"
            data-es="Desde el primer mensaje hasta la entrega. Sin sorpresas y sin depender de mí para mantenerlo."
            data-en="From your first message to delivery. No surprises, and no depending on me to keep it running.">
-          Desde el primer mensaje hasta la entrega. Sin sorpresas y sin depender de mí para mantenerlo.
+          From your first message to delivery. No surprises, and no depending on me to keep it running.
         </p>
       </div>
 
-      <div class="process-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px" style="background:rgba(255,255,255,0.06); border-radius:16px; overflow:hidden;">
 
-        <div class="process-cell p-6 md:p-8">
-          <div class="text-4xl font-black mb-5 gradient-text">01</div>
+        <div class="p-6 md:p-8" style="background:#1E1B4B;">
+          <div class="process-step-num mb-5">01</div>
           <h3 class="text-base font-bold mb-3 text-white"
-              data-es="Llamada inicial" data-en="Initial call">Llamada inicial</h3>
-          <p class="text-sm leading-relaxed text-slate-400"
+              data-es="Llamada inicial" data-en="Initial call">Initial call</h3>
+          <p class="text-sm leading-relaxed" style="color:#94A3B8;"
              data-es="30 minutos sin compromiso. Me cuentas qué quieres resolver y vemos juntos si puedo ayudarte y cómo."
              data-en="30 minutes, no commitment. You tell me what you want to solve and we see together if and how I can help.">
-            30 minutos sin compromiso. Me cuentas qué quieres resolver y vemos juntos si puedo ayudarte y cómo.
+            30 minutes, no commitment. You tell me what you want to solve and we see together if and how I can help.
           </p>
         </div>
 
-        <div class="process-cell p-6 md:p-8">
-          <div class="text-4xl font-black mb-5 gradient-text">02</div>
+        <div class="p-6 md:p-8" style="background:#1E1B4B;">
+          <div class="process-step-num mb-5">02</div>
           <h3 class="text-base font-bold mb-3 text-white"
-              data-es="Diagnóstico y diseño" data-en="Diagnosis and design">Diagnóstico y diseño</h3>
-          <p class="text-sm leading-relaxed text-slate-400"
-             data-es="Entiendo cómo trabajas, dónde pierdes tiempo y propongo un camino claro: qué construir, con qué y por qué. Sin sobreingeniería."
-             data-en="I understand how you work, where you lose time, and propose a clear path: what to build, with what, and why. No over-engineering.">
-            Entiendo cómo trabajas, dónde pierdes tiempo y propongo un camino claro: qué construir, con qué y por qué. Sin sobreingeniería.
+              data-es="Diagnóstico y diseño" data-en="Diagnosis and design">Diagnosis and design</h3>
+          <p class="text-sm leading-relaxed" style="color:#94A3B8;"
+             data-es="Entiendo cómo trabajas, dónde pierdes tiempo y propongo un camino claro. Sin sobreingeniería."
+             data-en="I understand how you work, where you lose time, and propose a clear path. No over-engineering.">
+            I understand how you work, where you lose time, and propose a clear path. No over-engineering.
           </p>
         </div>
 
-        <div class="process-cell p-6 md:p-8">
-          <div class="text-4xl font-black mb-5 gradient-text">03</div>
+        <div class="p-6 md:p-8" style="background:#1E1B4B;">
+          <div class="process-step-num mb-5">03</div>
           <h3 class="text-base font-bold mb-3 text-white"
-              data-es="Propuesta clara" data-en="Clear proposal">Propuesta clara</h3>
-          <p class="text-sm leading-relaxed text-slate-400"
-             data-es="Te presento qué se construirá, en cuánto tiempo y con qué costo. Sin letra chica ni sorpresas de último momento."
-             data-en="I lay out what will be built, in what time frame, and at what cost. No fine print or last-minute surprises.">
-            Te presento qué se construirá, en cuánto tiempo y con qué costo. Sin letra chica ni sorpresas de último momento.
+              data-es="Propuesta clara" data-en="Clear proposal">Clear proposal</h3>
+          <p class="text-sm leading-relaxed" style="color:#94A3B8;"
+             data-es="Qué se construirá, en cuánto tiempo y con qué costo. Sin letra chica ni sorpresas de último momento."
+             data-en="What will be built, in what time frame, and at what cost. No fine print or last-minute surprises.">
+            What will be built, in what time frame, and at what cost. No fine print or last-minute surprises.
           </p>
         </div>
 
-        <div class="process-cell p-6 md:p-8">
-          <div class="text-4xl font-black mb-5 gradient-text">04</div>
+        <div class="p-6 md:p-8" style="background:#1E1B4B;">
+          <div class="process-step-num mb-5">04</div>
           <h3 class="text-base font-bold mb-3 text-white"
-              data-es="Construcción contigo" data-en="Building with you">Construcción contigo</h3>
-          <p class="text-sm leading-relaxed text-slate-400"
-             data-es="Trabajamos juntos para que entiendas cada paso. No construyo cajas negras que nadie más puede tocar después."
-             data-en="We work together so you understand each step. I don't build black boxes that no one else can touch afterward.">
-            Trabajamos juntos para que entiendas cada paso. No construyo cajas negras que nadie más puede tocar después.
+              data-es="Construcción contigo" data-en="Building with you">Building with you</h3>
+          <p class="text-sm leading-relaxed" style="color:#94A3B8;"
+             data-es="Trabajamos juntos para que entiendas cada paso. No construyo cajas negras que nadie más pueda tocar."
+             data-en="We work together so you understand each step. I don't build black boxes that no one else can touch.">
+            We work together so you understand each step. I don't build black boxes that no one else can touch.
           </p>
         </div>
 
-        <div class="process-cell p-6 md:p-8">
-          <div class="text-4xl font-black mb-5 gradient-text">05</div>
+        <div class="p-6 md:p-8" style="background:#1E1B4B;">
+          <div class="process-step-num mb-5">05</div>
           <h3 class="text-base font-bold mb-3 text-white"
-              data-es="Entrega y soporte" data-en="Delivery and support">Entrega y soporte</h3>
-          <p class="text-sm leading-relaxed text-slate-400"
-             data-es="Terminas con algo usable desde el día siguiente, documentación simple y soporte post-entrega. (Disponibilidad y tarifas según los términos del contrato vigente.)"
-             data-en="You leave with something usable from day one, simple documentation, and post-delivery support. (Availability and rates subject to the terms of the current contract.)">
-            Terminas con algo usable desde el día siguiente, documentación simple y soporte post-entrega. <span class="text-slate-500 text-xs">(Disponibilidad y tarifas según los términos del contrato vigente.)</span>
+              data-es="Entrega y soporte" data-en="Delivery and support">Delivery and support</h3>
+          <p class="text-sm leading-relaxed" style="color:#94A3B8;"
+             data-es="Terminas con algo usable desde el día siguiente, documentación simple y soporte post-entrega."
+             data-en="You leave with something usable from day one, simple documentation, and post-delivery support.">
+            You leave with something usable from day one, simple documentation, and post-delivery support.
           </p>
         </div>
 
@@ -480,10 +556,10 @@
     <div class="max-w-5xl mx-auto">
 
       <div class="text-center mb-14">
-        <p class="text-indigo-600 font-semibold text-sm uppercase tracking-widest mb-3"
-           data-es="Resultados reales" data-en="Real results">Resultados reales</p>
-        <h2 class="text-3xl lg:text-4xl font-bold">
-          <span data-es="Antes y después de trabajar juntos" data-en="Before and after working together">Antes y después de trabajar juntos</span>
+        <p class="font-semibold text-sm uppercase tracking-widest mb-3" style="color:#6D64C4;"
+           data-es="Resultados reales" data-en="Real results">Real results</p>
+        <h2 class="text-3xl lg:text-4xl font-bold" style="color:#312E81;">
+          <span data-es="Antes y después de trabajar juntos" data-en="Before and after working together">Before and after working together</span>
         </h2>
       </div>
 
@@ -491,34 +567,34 @@
 
         <!-- Caso 1 -->
         <div>
-          <p class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-3 px-1"
-             data-es="📊 Reportes manuales" data-en="📊 Manual reports">📊 Reportes manuales</p>
+          <p class="text-xs font-semibold uppercase tracking-widest mb-3 px-1" style="color:#9CA3AF;"
+             data-es="⚡ Tareas manuales repetitivas" data-en="⚡ Repetitive manual tasks">⚡ Repetitive manual tasks</p>
           <div class="flex flex-col md:grid md:grid-cols-2 rounded-2xl overflow-hidden border border-slate-100">
-            <div class="bg-slate-50 p-5 md:p-7">
+            <div class="p-5 md:p-7" style="background:#F8FAFC;">
               <div class="inline-flex items-center gap-1.5 mb-4">
-                <svg class="w-3.5 h-3.5 text-rose-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z" clip-rule="evenodd"/></svg>
-                <span class="text-xs font-bold uppercase tracking-widest text-rose-400" data-es="Antes" data-en="Before">Antes</span>
+                <svg class="w-3.5 h-3.5 flex-shrink-0" style="color:#F87171;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z" clip-rule="evenodd"/></svg>
+                <span class="text-xs font-bold uppercase tracking-widest" style="color:#EF4444;" data-es="Antes" data-en="Before">Before</span>
               </div>
-              <p class="text-sm leading-relaxed text-slate-500"
-                 data-es="Reportes semanales armados a mano en Excel. Cada lunes: copiar, pegar, revisar errores, formatear. Una hora y media de trabajo que no aporta ninguna decisión nueva."
+              <p class="text-sm leading-relaxed" style="color:#6B7280;"
+                 data-es="Reportes semanales armados a mano en Excel. Cada lunes: copiar, pegar, revisar errores, formatear. Una hora y media que no aporta ninguna decisión nueva."
                  data-en="Weekly reports built manually in Excel. Every Monday: copy, paste, fix errors, format. An hour and a half of work that adds no new decisions.">
-                Reportes semanales armados a mano en Excel. Cada lunes: copiar, pegar, revisar errores, formatear. Una hora y media de trabajo que no aporta ninguna decisión nueva.
+                Weekly reports built manually in Excel. Every Monday: copy, paste, fix errors, format. An hour and a half of work that adds no new decisions.
               </p>
             </div>
-            <div class="md:hidden flex items-center gap-3 px-5 py-3 bg-indigo-50 border-y border-indigo-100">
-              <div class="h-px flex-1 bg-indigo-200"></div>
-              <svg class="w-4 h-4 text-indigo-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
-              <div class="h-px flex-1 bg-indigo-200"></div>
+            <div class="md:hidden flex items-center gap-3 px-5 py-3 border-y" style="background:#EEF0FF; border-color:#C7D2FE;">
+              <div class="h-px flex-1" style="background:#A5B4FC;"></div>
+              <svg class="w-4 h-4 flex-shrink-0" style="color:#6D64C4;" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+              <div class="h-px flex-1" style="background:#A5B4FC;"></div>
             </div>
             <div class="bg-white p-5 md:p-7">
               <div class="inline-flex items-center gap-1.5 mb-4">
-                <svg class="w-3.5 h-3.5 text-indigo-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
-                <span class="text-xs font-bold uppercase tracking-widest text-indigo-500" data-es="Después" data-en="After">Después</span>
+                <svg class="w-3.5 h-3.5 flex-shrink-0" style="color:#6D64C4;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
+                <span class="text-xs font-bold uppercase tracking-widest" style="color:#6D64C4;" data-es="Después" data-en="After">After</span>
               </div>
-              <p class="text-sm leading-relaxed text-slate-700"
-                 data-es="Dashboard actualizado con estructura clara y visual. El equipo lo revisa en cinco minutos, puede filtrarlo por sí mismo y sabe exactamente qué decisión tomar."
-                 data-en="Automatically updated dashboard with a clear, visual structure. The team reviews it in five minutes, can filter it on their own, and knows exactly what decision to make.">
-                Dashboard actualizado con estructura clara y visual. El equipo lo revisa en cinco minutos, puede filtrarlo por sí mismo y sabe exactamente qué decisión tomar.
+              <p class="text-sm leading-relaxed" style="color:#111827;"
+                 data-es="Dashboard actualizado automáticamente. El equipo lo revisa en cinco minutos y sabe exactamente qué decisión tomar."
+                 data-en="Automatically updated dashboard. The team reviews it in five minutes and knows exactly what decision to make.">
+                Automatically updated dashboard. The team reviews it in five minutes and knows exactly what decision to make.
               </p>
             </div>
           </div>
@@ -526,34 +602,34 @@
 
         <!-- Caso 2 -->
         <div>
-          <p class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-3 px-1"
-             data-es="📁 Información dispersa" data-en="📁 Scattered information">📁 Información dispersa</p>
+          <p class="text-xs font-semibold uppercase tracking-widest mb-3 px-1" style="color:#9CA3AF;"
+             data-es="📁 Información dispersa" data-en="📁 Scattered information">📁 Scattered information</p>
           <div class="flex flex-col md:grid md:grid-cols-2 rounded-2xl overflow-hidden border border-slate-100">
-            <div class="bg-slate-50 p-5 md:p-7">
+            <div class="p-5 md:p-7" style="background:#F8FAFC;">
               <div class="inline-flex items-center gap-1.5 mb-4">
-                <svg class="w-3.5 h-3.5 text-rose-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z" clip-rule="evenodd"/></svg>
-                <span class="text-xs font-bold uppercase tracking-widest text-rose-400" data-es="Antes" data-en="Before">Antes</span>
+                <svg class="w-3.5 h-3.5 flex-shrink-0" style="color:#F87171;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z" clip-rule="evenodd"/></svg>
+                <span class="text-xs font-bold uppercase tracking-widest" style="color:#EF4444;" data-es="Antes" data-en="Before">Before</span>
               </div>
-              <p class="text-sm leading-relaxed text-slate-500"
-                 data-es="Información dispersa entre formularios de Google, hojas de cálculo y correos. Nadie sabe cuál es la versión más reciente de nada. Coordinar toma más tiempo que el trabajo mismo."
-                 data-en="Information scattered across Google Forms, spreadsheets, and emails. Nobody knows which is the most recent version of anything. Coordinating takes more time than the actual work.">
-                Información dispersa entre formularios de Google, hojas de cálculo y correos. Nadie sabe cuál es la versión más reciente de nada. Coordinar toma más tiempo que el trabajo mismo.
+              <p class="text-sm leading-relaxed" style="color:#6B7280;"
+                 data-es="Información entre formularios, hojas y correos. Nadie sabe cuál versión es la correcta. Coordinar toma más tiempo que el trabajo mismo."
+                 data-en="Information scattered across forms, spreadsheets, and emails. Nobody knows which version is current. Coordinating takes more time than the actual work.">
+                Information scattered across forms, spreadsheets, and emails. Nobody knows which version is current. Coordinating takes more time than the actual work.
               </p>
             </div>
-            <div class="md:hidden flex items-center gap-3 px-5 py-3 bg-indigo-50 border-y border-indigo-100">
-              <div class="h-px flex-1 bg-indigo-200"></div>
-              <svg class="w-4 h-4 text-indigo-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
-              <div class="h-px flex-1 bg-indigo-200"></div>
+            <div class="md:hidden flex items-center gap-3 px-5 py-3 border-y" style="background:#EEF0FF; border-color:#C7D2FE;">
+              <div class="h-px flex-1" style="background:#A5B4FC;"></div>
+              <svg class="w-4 h-4 flex-shrink-0" style="color:#6D64C4;" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+              <div class="h-px flex-1" style="background:#A5B4FC;"></div>
             </div>
             <div class="bg-white p-5 md:p-7">
               <div class="inline-flex items-center gap-1.5 mb-4">
-                <svg class="w-3.5 h-3.5 text-indigo-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
-                <span class="text-xs font-bold uppercase tracking-widest text-indigo-500" data-es="Después" data-en="After">Después</span>
+                <svg class="w-3.5 h-3.5 flex-shrink-0" style="color:#6D64C4;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
+                <span class="text-xs font-bold uppercase tracking-widest" style="color:#6D64C4;" data-es="Después" data-en="After">After</span>
               </div>
-              <p class="text-sm leading-relaxed text-slate-700"
-                 data-es="Flujo centralizado con una fuente única de verdad. Menos herramientas, menos correos, menos tiempo buscando qué versión es la correcta."
-                 data-en="Centralized flow with a single source of truth. Fewer tools, fewer emails, less time searching for which version is the right one.">
-                Flujo centralizado con una fuente única de verdad. Menos herramientas, menos correos, menos tiempo buscando qué versión es la correcta.
+              <p class="text-sm leading-relaxed" style="color:#111827;"
+                 data-es="Flujo centralizado con una fuente única de verdad. Menos herramientas, menos correos, menos tiempo buscando."
+                 data-en="Centralized flow with a single source of truth. Fewer tools, fewer emails, less time searching.">
+                Centralized flow with a single source of truth. Fewer tools, fewer emails, less time searching.
               </p>
             </div>
           </div>
@@ -561,34 +637,34 @@
 
         <!-- Caso 3 -->
         <div>
-          <p class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-3 px-1"
-             data-es="🤖 Proyectos con IA" data-en="🤖 AI projects">🤖 Proyectos con IA</p>
+          <p class="text-xs font-semibold uppercase tracking-widest mb-3 px-1" style="color:#9CA3AF;"
+             data-es="🤖 Empezar con IA" data-en="🤖 Getting started with AI">🤖 Getting started with AI</p>
           <div class="flex flex-col md:grid md:grid-cols-2 rounded-2xl overflow-hidden border border-slate-100">
-            <div class="bg-slate-50 p-5 md:p-7">
+            <div class="p-5 md:p-7" style="background:#F8FAFC;">
               <div class="inline-flex items-center gap-1.5 mb-4">
-                <svg class="w-3.5 h-3.5 text-rose-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z" clip-rule="evenodd"/></svg>
-                <span class="text-xs font-bold uppercase tracking-widest text-rose-400" data-es="Antes" data-en="Before">Antes</span>
+                <svg class="w-3.5 h-3.5 flex-shrink-0" style="color:#F87171;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z" clip-rule="evenodd"/></svg>
+                <span class="text-xs font-bold uppercase tracking-widest" style="color:#EF4444;" data-es="Antes" data-en="Before">Before</span>
               </div>
-              <p class="text-sm leading-relaxed text-slate-500"
-                 data-es="Ideas claras para usar IA, pero sin saber si tiene sentido técnico, qué herramienta elegir ni cómo empezar sin romper lo que ya funciona."
-                 data-en="Clear ideas for using AI, but no idea if it makes technical sense, which tool to choose, or how to start without breaking what already works.">
-                Ideas claras para usar IA, pero sin saber si tiene sentido técnico, qué herramienta elegir ni cómo empezar sin romper lo que ya funciona.
+              <p class="text-sm leading-relaxed" style="color:#6B7280;"
+                 data-es="Ideas para usar IA, pero sin saber si tiene sentido, qué herramienta elegir ni cómo empezar sin romper lo que ya funciona."
+                 data-en="Ideas for using AI, but no idea if it makes sense, which tool to choose, or how to start without breaking what already works.">
+                Ideas for using AI, but no idea if it makes sense, which tool to choose, or how to start without breaking what already works.
               </p>
             </div>
-            <div class="md:hidden flex items-center gap-3 px-5 py-3 bg-indigo-50 border-y border-indigo-100">
-              <div class="h-px flex-1 bg-indigo-200"></div>
-              <svg class="w-4 h-4 text-indigo-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
-              <div class="h-px flex-1 bg-indigo-200"></div>
+            <div class="md:hidden flex items-center gap-3 px-5 py-3 border-y" style="background:#EEF0FF; border-color:#C7D2FE;">
+              <div class="h-px flex-1" style="background:#A5B4FC;"></div>
+              <svg class="w-4 h-4 flex-shrink-0" style="color:#6D64C4;" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+              <div class="h-px flex-1" style="background:#A5B4FC;"></div>
             </div>
             <div class="bg-white p-5 md:p-7">
               <div class="inline-flex items-center gap-1.5 mb-4">
-                <svg class="w-3.5 h-3.5 text-indigo-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
-                <span class="text-xs font-bold uppercase tracking-widest text-indigo-500" data-es="Después" data-en="After">Después</span>
+                <svg class="w-3.5 h-3.5 flex-shrink-0" style="color:#6D64C4;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
+                <span class="text-xs font-bold uppercase tracking-widest" style="color:#6D64C4;" data-es="Después" data-en="After">After</span>
               </div>
-              <p class="text-sm leading-relaxed text-slate-700"
+              <p class="text-sm leading-relaxed" style="color:#111827;"
                  data-es="Prototipo funcional, criterios claros para los siguientes pasos y claridad sobre qué vale la pena escalar — y qué no."
-                 data-en="Functional prototype, clear criteria for next steps, and clarity about what's worth scaling — and what isn't.">
-                Prototipo funcional, criterios claros para los siguientes pasos y claridad sobre qué vale la pena escalar — y qué no.
+                 data-en="Functional prototype, clear criteria for next steps, and clarity on what's worth scaling — and what isn't.">
+                Functional prototype, clear criteria for next steps, and clarity on what's worth scaling — and what isn't.
               </p>
             </div>
           </div>
@@ -596,34 +672,34 @@
 
         <!-- Caso 4 -->
         <div>
-          <p class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-3 px-1"
-             data-es="🔍 Monitoreo de información" data-en="🔍 Information monitoring">🔍 Monitoreo de información</p>
+          <p class="text-xs font-semibold uppercase tracking-widest mb-3 px-1" style="color:#9CA3AF;"
+             data-es="🔍 Monitoreo de información" data-en="🔍 Information monitoring">🔍 Information monitoring</p>
           <div class="flex flex-col md:grid md:grid-cols-2 rounded-2xl overflow-hidden border border-slate-100">
-            <div class="bg-slate-50 p-5 md:p-7">
+            <div class="p-5 md:p-7" style="background:#F8FAFC;">
               <div class="inline-flex items-center gap-1.5 mb-4">
-                <svg class="w-3.5 h-3.5 text-rose-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z" clip-rule="evenodd"/></svg>
-                <span class="text-xs font-bold uppercase tracking-widest text-rose-400" data-es="Antes" data-en="Before">Antes</span>
+                <svg class="w-3.5 h-3.5 flex-shrink-0" style="color:#F87171;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z" clip-rule="evenodd"/></svg>
+                <span class="text-xs font-bold uppercase tracking-widest" style="color:#EF4444;" data-es="Antes" data-en="Before">Before</span>
               </div>
-              <p class="text-sm leading-relaxed text-slate-500"
-                 data-es="Revisar docenas de fuentes, páginas web y reportes dispersos todos los días, a toda hora. Horas perdidas buscando la misma información en distintos lugares, sin saber si ya estaba actualizada."
-                 data-en="Checking dozens of sources, web pages, and scattered reports every day, at all hours. Hours lost searching for the same information in different places, never sure if it was up to date.">
-                Revisar docenas de fuentes, páginas web y reportes dispersos todos los días, a toda hora. Horas perdidas buscando la misma información en distintos lugares, sin saber si ya estaba actualizada.
+              <p class="text-sm leading-relaxed" style="color:#6B7280;"
+                 data-es="Revisar docenas de fuentes dispersas todos los días. Horas perdidas buscando la misma información, sin saber si ya estaba actualizada."
+                 data-en="Checking dozens of scattered sources every day. Hours lost searching for the same information, never sure if it was up to date.">
+                Checking dozens of scattered sources every day. Hours lost searching for the same information, never sure if it was up to date.
               </p>
             </div>
-            <div class="md:hidden flex items-center gap-3 px-5 py-3 bg-indigo-50 border-y border-indigo-100">
-              <div class="h-px flex-1 bg-indigo-200"></div>
-              <svg class="w-4 h-4 text-indigo-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
-              <div class="h-px flex-1 bg-indigo-200"></div>
+            <div class="md:hidden flex items-center gap-3 px-5 py-3 border-y" style="background:#EEF0FF; border-color:#C7D2FE;">
+              <div class="h-px flex-1" style="background:#A5B4FC;"></div>
+              <svg class="w-4 h-4 flex-shrink-0" style="color:#6D64C4;" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+              <div class="h-px flex-1" style="background:#A5B4FC;"></div>
             </div>
             <div class="bg-white p-5 md:p-7">
               <div class="inline-flex items-center gap-1.5 mb-4">
-                <svg class="w-3.5 h-3.5 text-indigo-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
-                <span class="text-xs font-bold uppercase tracking-widest text-indigo-500" data-es="Después" data-en="After">Después</span>
+                <svg class="w-3.5 h-3.5 flex-shrink-0" style="color:#6D64C4;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
+                <span class="text-xs font-bold uppercase tracking-widest" style="color:#6D64C4;" data-es="Después" data-en="After">After</span>
               </div>
-              <p class="text-sm leading-relaxed text-slate-700"
-                 data-es="Un dashboard centralizado que consolida toda esa información en un solo lugar. Lo que antes tomaba días de seguimiento continuo, ahora se revisa en minutos."
-                 data-en="A centralized dashboard that brings all that information together in one place. What used to take days of continuous monitoring now takes just minutes to review.">
-                Un dashboard centralizado que consolida toda esa información en un solo lugar. Lo que antes tomaba días de seguimiento continuo, ahora se revisa en minutos.
+              <p class="text-sm leading-relaxed" style="color:#111827;"
+                 data-es="Dashboard centralizado que consolida todo en un solo lugar. Lo que antes tomaba días, ahora se revisa en minutos."
+                 data-en="Centralized dashboard that brings everything together in one place. What used to take days of monitoring now takes minutes to review.">
+                Centralized dashboard that brings everything together in one place. What used to take days of monitoring now takes minutes to review.
               </p>
             </div>
           </div>
@@ -634,7 +710,7 @@
   </section>
 
   <!-- ═══ SOBRE MÍ ═══ -->
-  <section id="sobre-mi" class="py-12 md:py-24 px-6 bg-slate-50">
+  <section id="sobre-mi" class="py-12 md:py-24 px-6" style="background:#F9F8F6;">
     <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[360px_1fr] gap-16 items-start">
 
       <!-- Photo -->
@@ -647,36 +723,36 @@
 
       <!-- Text -->
       <div class="lg:pt-3">
-        <p class="text-indigo-600 font-semibold text-sm uppercase tracking-widest mb-4"
-           data-es="Sobre mí" data-en="About me">Sobre mí</p>
-        <h2 class="text-3xl lg:text-4xl font-bold mb-8">
-          <span data-es="Hola, soy Liz" data-en="Hi, I'm Liz">Hola, soy Liz</span>
+        <p class="font-semibold text-sm uppercase tracking-widest mb-4" style="color:#6D64C4;"
+           data-es="Sobre mí" data-en="About me">About me</p>
+        <h2 class="text-3xl lg:text-4xl font-bold mb-8" style="color:#312E81;">
+          <span data-es="Hola, soy Liz" data-en="Hi, I'm Liz">Hi, I'm Liz</span>
         </h2>
 
         <div class="space-y-5 mb-9">
-          <p class="text-base leading-relaxed text-slate-500"
+          <p class="text-base leading-relaxed" style="color:#6B7280;"
              data-es="Soy estadística y científica de datos con más de 10 años de experiencia trabajando con organizaciones que querían aprovechar mejor sus datos. Con el tiempo entendí algo que no está en los libros: muchas soluciones fallan no por falta de tecnología, sino porque nadie quiere usar algo que se siente complicado."
-             data-en="I'm a statistician and data scientist with over 10 years of experience working with organizations that wanted to make better use of their data. Over time I understood something that's not in the textbooks: many solutions fail not because of a lack of technology, but because no one wants to use something that feels complicated.">
-            Soy estadística y científica de datos con más de 10 años de experiencia trabajando con organizaciones que querían aprovechar mejor sus datos. Con el tiempo entendí algo que no está en los libros: muchas soluciones fallan no por falta de tecnología, sino porque nadie quiere usar algo que se siente complicado.
+             data-en="I'm a statistician and data scientist with over 10 years of experience helping organizations make better use of their information. Over time I understood something that's not in the textbooks: most solutions fail not because of a lack of technology, but because no one wants to use something that feels complicated.">
+            I'm a statistician and data scientist with over 10 years of experience helping organizations make better use of their information. Over time I understood something that's not in the textbooks: most solutions fail not because of a lack of technology, but because no one wants to use something that feels complicated.
           </p>
-          <p class="text-base leading-relaxed text-slate-500"
-             data-es="Por eso creé Simplai: para ayudar a personas y equipos pequeños a convertir datos, IA y automatización en herramientas prácticas, entendibles y sostenibles — sin complicaciones innecesarias y con resultados reales desde la primera sesión."
-             data-en="That's why I created Simplai: to help people and small teams turn data, AI, and automation into practical, understandable, and sustainable tools — without unnecessary complexity and with real results from the very first session.">
-            Por eso creé Simplai: para ayudar a personas y equipos pequeños a convertir datos, IA y automatización en herramientas prácticas, entendibles y sostenibles — sin complicaciones innecesarias y con resultados reales desde la primera sesión.
+          <p class="text-base leading-relaxed" style="color:#6B7280;"
+             data-es="Por eso creé Simplai: para ayudar a cualquier persona — no solo a equipos técnicos — a convertir la IA y la automatización en herramientas prácticas que de verdad usan, sin complicaciones innecesarias."
+             data-en="That's why I created Simplai: to help anyone — not just technical teams — turn AI and automation into practical tools they'll actually use, without unnecessary complexity.">
+            That's why I created Simplai: to help anyone — not just technical teams — turn AI and automation into practical tools they'll actually use, without unnecessary complexity.
           </p>
         </div>
 
         <div class="flex flex-wrap gap-2.5">
-          <span class="text-xs font-semibold px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-600">
-            <span data-es="Estadística & Data Science" data-en="Statistics & Data Science">Estadística & Data Science</span>
+          <span class="text-xs font-semibold px-3 py-1.5 rounded-full bg-white border border-slate-200" style="color:#374151;">
+            <span data-es="Estadística & Data Science" data-en="Statistics & Data Science">Statistics & Data Science</span>
           </span>
-          <span class="text-xs font-semibold px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-600">
-            <span data-es="IA aplicada" data-en="Applied AI">IA aplicada</span>
+          <span class="text-xs font-semibold px-3 py-1.5 rounded-full bg-white border border-slate-200" style="color:#374151;">
+            <span data-es="IA aplicada" data-en="Applied AI">Applied AI</span>
           </span>
-          <span class="text-xs font-semibold px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-600">
-            <span data-es="Automatización de procesos" data-en="Process automation">Automatización de procesos</span>
+          <span class="text-xs font-semibold px-3 py-1.5 rounded-full bg-white border border-slate-200" style="color:#374151;">
+            <span data-es="Automatización de procesos" data-en="Process automation">Process automation</span>
           </span>
-          <span class="text-xs font-semibold px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-600">
+          <span class="text-xs font-semibold px-3 py-1.5 rounded-full" style="background:#FEF3C7; color:#92400E; border:1px solid #FDE68A;">
             <span data-es="Español & English" data-en="Español & English">Español & English</span>
           </span>
         </div>
@@ -690,86 +766,86 @@
     <div class="max-w-3xl mx-auto">
 
       <div class="text-center mb-12">
-        <p class="text-indigo-600 font-semibold text-sm uppercase tracking-widest mb-3"
-           data-es="Preguntas frecuentes" data-en="FAQ">Preguntas frecuentes</p>
-        <h2 class="text-3xl lg:text-4xl font-bold">
-          <span data-es="Lo que suelen preguntar" data-en="What people usually ask">Lo que suelen preguntar</span>
+        <p class="font-semibold text-sm uppercase tracking-widest mb-3" style="color:#6D64C4;"
+           data-es="Preguntas frecuentes" data-en="FAQ">FAQ</p>
+        <h2 class="text-3xl lg:text-4xl font-bold" style="color:#312E81;">
+          <span data-es="Lo que suelen preguntar" data-en="What people usually ask">What people usually ask</span>
         </h2>
       </div>
 
       <div class="space-y-2" id="faq-list">
 
         <div class="faq-item rounded-2xl overflow-hidden border border-slate-100">
-          <button class="faq-question w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-medium text-sm bg-white hover:bg-slate-50 transition-colors text-slate-900" aria-expanded="false">
+          <button class="faq-question w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-medium text-sm bg-white hover:bg-slate-50 transition-colors" style="color:#111827;" aria-expanded="false">
             <span data-es="¿Necesito tener conocimientos técnicos para trabajar contigo?"
-                  data-en="Do I need technical knowledge to work with you?">¿Necesito tener conocimientos técnicos para trabajar contigo?</span>
-            <svg class="faq-chevron w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                  data-en="Do I need technical knowledge to work with you?">Do I need technical knowledge to work with you?</span>
+            <svg class="faq-chevron w-5 h-5" style="color:#9CA3AF;" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
           <div class="faq-answer bg-white">
-            <p class="px-6 pb-5 text-sm leading-relaxed text-slate-500"
+            <p class="px-6 pb-5 text-sm leading-relaxed" style="color:#6B7280;"
                data-es="No. Trabajo exactamente con personas que no tienen perfil técnico. Parte de mi trabajo es explicar las cosas de forma simple y construir soluciones que no requieran conocimientos especializados para usarlas."
-               data-en="No. I work precisely with people who don't have a technical background. Part of my job is explaining things in simple terms and building solutions that don't require specialized knowledge to use.">
-              No. Trabajo exactamente con personas que no tienen perfil técnico. Parte de mi trabajo es explicar las cosas de forma simple y construir soluciones que no requieran conocimientos especializados para usarlas.
+               data-en="No. I work precisely with people who don't have a technical background. Part of my job is explaining things in plain terms and building solutions that don't require specialized knowledge to use.">
+              No. I work precisely with people who don't have a technical background. Part of my job is explaining things in plain terms and building solutions that don't require specialized knowledge to use.
             </p>
           </div>
         </div>
 
         <div class="faq-item rounded-2xl overflow-hidden border border-slate-100">
-          <button class="faq-question w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-medium text-sm bg-white hover:bg-slate-50 transition-colors text-slate-900" aria-expanded="false">
-            <span data-es="¿Qué pasa si mis datos están desordenados?"
-                  data-en="What if my data is messy?">¿Qué pasa si mis datos están desordenados?</span>
-            <svg class="faq-chevron w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          <button class="faq-question w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-medium text-sm bg-white hover:bg-slate-50 transition-colors" style="color:#111827;" aria-expanded="false">
+            <span data-es="¿Trabajas solo con empresas o también con personas?"
+                  data-en="Do you work only with businesses or also with individuals?">Do you work only with businesses or also with individuals?</span>
+            <svg class="faq-chevron w-5 h-5" style="color:#9CA3AF;" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
           <div class="faq-answer bg-white">
-            <p class="px-6 pb-5 text-sm leading-relaxed text-slate-500"
-               data-es="Bienvenido al club. El 95% de los proyectos empiezan con datos dispersos, incompletos o mal organizados. Ordenar eso es parte del proceso, no un obstáculo para empezar."
-               data-en="Welcome to the club. 95% of projects start with scattered, incomplete, or poorly organized data. Sorting that out is part of the process, not an obstacle to getting started.">
-              Bienvenido al club. El 95% de los proyectos empiezan con datos dispersos, incompletos o mal organizados. Ordenar eso es parte del proceso, no un obstáculo para empezar.
+            <p class="px-6 pb-5 text-sm leading-relaxed" style="color:#6B7280;"
+               data-es="Con ambos. Trabajo con equipos pequeños, freelancers, y también con personas que quieren automatizar tareas de su vida personal: su presupuesto, sus recordatorios, su rutina diaria."
+               data-en="Both. I work with small teams, freelancers, and also with individuals who want to automate personal tasks: their budget, reminders, daily routines.">
+              Both. I work with small teams, freelancers, and also with individuals who want to automate personal tasks: their budget, reminders, daily routines.
             </p>
           </div>
         </div>
 
         <div class="faq-item rounded-2xl overflow-hidden border border-slate-100">
-          <button class="faq-question w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-medium text-sm bg-white hover:bg-slate-50 transition-colors text-slate-900" aria-expanded="false">
+          <button class="faq-question w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-medium text-sm bg-white hover:bg-slate-50 transition-colors" style="color:#111827;" aria-expanded="false">
             <span data-es="¿Trabajas por hora o por proyecto?"
-                  data-en="Do you work hourly or by project?">¿Trabajas por hora o por proyecto?</span>
-            <svg class="faq-chevron w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                  data-en="Do you work hourly or by project?">Do you work hourly or by project?</span>
+            <svg class="faq-chevron w-5 h-5" style="color:#9CA3AF;" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
           <div class="faq-answer bg-white">
-            <p class="px-6 pb-5 text-sm leading-relaxed text-slate-500"
-               data-es="Ambas opciones. Para proyectos bien definidos ofrezco un precio cerrado por entregable. Para asesorías o exploraciones iniciales trabajo por hora. En la primera conversación definimos cuál tiene más sentido para tu caso."
+            <p class="px-6 pb-5 text-sm leading-relaxed" style="color:#6B7280;"
+               data-es="Ambas opciones. Para proyectos bien definidos ofrezco un precio cerrado por entregable. Para asesorías o exploraciones iniciales trabajo por hora. En la primera conversación definimos cuál tiene más sentido."
                data-en="Both options. For well-defined projects I offer a fixed price per deliverable. For consulting or initial explorations I work hourly. In our first conversation we figure out which makes more sense for your situation.">
-              Ambas opciones. Para proyectos bien definidos ofrezco un precio cerrado por entregable. Para asesorías o exploraciones iniciales trabajo por hora. En la primera conversación definimos cuál tiene más sentido para tu caso.
+              Both options. For well-defined projects I offer a fixed price per deliverable. For consulting or initial explorations I work hourly. In our first conversation we figure out which makes more sense for your situation.
             </p>
           </div>
         </div>
 
         <div class="faq-item rounded-2xl overflow-hidden border border-slate-100">
-          <button class="faq-question w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-medium text-sm bg-white hover:bg-slate-50 transition-colors text-slate-900" aria-expanded="false">
+          <button class="faq-question w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-medium text-sm bg-white hover:bg-slate-50 transition-colors" style="color:#111827;" aria-expanded="false">
             <span data-es="¿Puedo empezar con una sola sesión?"
-                  data-en="Can I start with just one session?">¿Puedo empezar con una sola sesión?</span>
-            <svg class="faq-chevron w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                  data-en="Can I start with just one session?">Can I start with just one session?</span>
+            <svg class="faq-chevron w-5 h-5" style="color:#9CA3AF;" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
           <div class="faq-answer bg-white">
-            <p class="px-6 pb-5 text-sm leading-relaxed text-slate-500"
+            <p class="px-6 pb-5 text-sm leading-relaxed" style="color:#6B7280;"
                data-es="Sí. Muchos clientes empiezan con una sesión de diagnóstico de 60–90 minutos. A veces eso es suficiente para tener claridad. A veces abre el camino a un proyecto más grande. No hay compromiso de continuidad."
                data-en="Yes. Many clients start with a 60–90 minute diagnostic session. Sometimes that's enough to gain clarity. Sometimes it opens the door to a bigger project. No commitment to continue.">
-              Sí. Muchos clientes empiezan con una sesión de diagnóstico de 60–90 minutos. A veces eso es suficiente para tener claridad. A veces abre el camino a un proyecto más grande. No hay compromiso de continuidad.
+              Yes. Many clients start with a 60–90 minute diagnostic session. Sometimes that's enough to gain clarity. Sometimes it opens the door to a bigger project. No commitment to continue.
             </p>
           </div>
         </div>
 
         <div class="faq-item rounded-2xl overflow-hidden border border-slate-100">
-          <button class="faq-question w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-medium text-sm bg-white hover:bg-slate-50 transition-colors text-slate-900" aria-expanded="false">
+          <button class="faq-question w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-medium text-sm bg-white hover:bg-slate-50 transition-colors" style="color:#111827;" aria-expanded="false">
             <span data-es="¿Qué tipo de herramientas usas?"
-                  data-en="What kind of tools do you use?">¿Qué tipo de herramientas usas?</span>
-            <svg class="faq-chevron w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                  data-en="What kind of tools do you use?">What kind of tools do you use?</span>
+            <svg class="faq-chevron w-5 h-5" style="color:#9CA3AF;" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
           <div class="faq-answer bg-white">
-            <p class="px-6 pb-5 text-sm leading-relaxed text-slate-500"
-               data-es="Depende del problema. Siempre priorizo herramientas que ya conoces o que son fáciles de aprender, que no requieran mantenimiento constante y que se adapten a tu contexto. Nunca elijo una herramienta porque esté de moda — la elijo porque tiene sentido para lo que necesitas."
-               data-en="It depends on the problem. I always prioritize tools you already know or that are easy to learn, that don't require constant maintenance, and that fit your context. I never choose a tool because it's trendy — I choose it because it makes sense for what you need.">
-              Depende del problema. Siempre priorizo herramientas que ya conoces o que son fáciles de aprender, que no requieran mantenimiento constante y que se adapten a tu contexto. Nunca elijo una herramienta porque esté de moda — la elijo porque tiene sentido para lo que necesitas.
+            <p class="px-6 pb-5 text-sm leading-relaxed" style="color:#6B7280;"
+               data-es="Depende del problema. Siempre priorizo herramientas que ya conoces o que son fáciles de aprender, que no requieran mantenimiento constante y que se adapten a tu contexto. Nunca elijo una herramienta porque esté de moda."
+               data-en="It depends on the problem. I always prioritize tools you already know or that are easy to learn, that don't require constant maintenance, and that fit your context. I never choose a tool because it's trendy.">
+              It depends on the problem. I always prioritize tools you already know or that are easy to learn, that don't require constant maintenance, and that fit your context. I never choose a tool because it's trendy.
             </p>
           </div>
         </div>
@@ -779,37 +855,43 @@
   </section>
 
   <!-- ═══ CONTACTO ═══ -->
-  <section id="contacto" class="py-12 md:py-24 px-6 bg-indigo-600">
+  <section id="contacto" class="py-12 md:py-24 px-6" style="background:#312E81;">
     <div class="max-w-2xl mx-auto text-center">
 
-      <p class="text-indigo-300 font-semibold text-sm uppercase tracking-widest mb-4"
-         data-es="Hablemos" data-en="Let's talk">Hablemos</p>
+      <p class="font-semibold text-sm uppercase tracking-widest mb-4" style="color:#A5B4FC;"
+         data-es="Hablemos" data-en="Let's talk">Let's talk</p>
       <h2 class="text-3xl lg:text-4xl font-bold mb-5 text-white">
-        <span data-es="¿Qué estás intentando simplificar?" data-en="What are you trying to simplify?">¿Qué estás intentando simplificar?</span>
+        <span data-es="¿Qué estás intentando simplificar?" data-en="What are you trying to simplify?">What are you trying to simplify?</span>
       </h2>
-      <p class="text-base leading-relaxed mb-10 text-indigo-200"
-         data-es="Cuéntame qué estás intentando simplificar. No necesitas tener todo claro antes de escribir. Conversamos y vemos si puedo ayudarte."
-         data-en="Tell me what you're trying to simplify. You don't need to have everything figured out before reaching out. Let's talk and see if I can help.">
-        Cuéntame qué estás intentando simplificar. No necesitas tener todo claro antes de escribir. Conversamos y vemos si puedo ayudarte.
+      <p class="text-base leading-relaxed mb-3" style="color:#C7D2FE;"
+         data-es="Cuéntame qué estás intentando simplificar. No necesitas tener todo claro antes de escribir."
+         data-en="Tell me what you're trying to simplify. You don't need to have everything figured out before reaching out.">
+        Tell me what you're trying to simplify. You don't need to have everything figured out before reaching out.
+      </p>
+      <p class="text-sm mb-10 italic" style="color:#A5B4FC;">
+        <span data-es="AI for the tasks that slow you down." data-en="AI for the tasks that slow you down.">AI for the tasks that slow you down.</span>
       </p>
 
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="https://calendly.com/simpleaibyliz/30min" target="_blank" rel="noopener"
-           class="inline-flex items-center justify-center gap-2.5 bg-white text-indigo-700 font-semibold px-9 py-4 rounded-full hover:bg-indigo-50 transition-colors text-base">
+           class="inline-flex items-center justify-center gap-2.5 bg-white font-semibold px-9 py-4 rounded-full hover:bg-indigo-50 transition-colors text-base"
+           style="color:#312E81;">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
           </svg>
-          <span data-es="Agenda una llamada" data-en="Book a call">Agenda una llamada</span>
+          <span data-es="Agenda una llamada" data-en="Book a call">Book a call</span>
         </a>
         <a href="https://wa.me/573172866192" target="_blank" rel="noopener"
            class="inline-flex items-center justify-center gap-2.5 bg-green-500 text-white font-semibold px-9 py-4 rounded-full hover:bg-green-600 transition-colors text-base">
           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-          <span data-es="Escríbeme por WhatsApp" data-en="Message me on WhatsApp">Escríbeme por WhatsApp</span>
+          <span data-es="Escríbeme por WhatsApp" data-en="Message me on WhatsApp">Message me on WhatsApp</span>
         </a>
         <a href="mailto:simpleai@gmail.com"
-           class="inline-flex items-center justify-center gap-2.5 border-2 border-indigo-400 text-white font-semibold px-9 py-4 rounded-full hover:border-white transition-colors text-base">
+           class="inline-flex items-center justify-center gap-2.5 border-2 text-white font-semibold px-9 py-4 rounded-full transition-colors text-base"
+           style="border-color:#6D64C4;"
+           onmouseover="this.style.borderColor='white'" onmouseout="this.style.borderColor='#6D64C4'">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-          <span data-es="Enviar correo" data-en="Send email">Enviar correo</span>
+          <span data-es="Enviar correo" data-en="Send email">Send email</span>
         </a>
       </div>
 
@@ -817,12 +899,14 @@
   </section>
 
   <!-- ═══ FOOTER ═══ -->
-  <footer class="py-8 px-6 border-t border-slate-100">
+  <footer class="py-8 px-6 border-t border-slate-100 bg-white">
     <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
-      <img src="images/Logo cuadrado.png" alt="Simplai by Liz" class="h-40 w-auto" />
-      <span class="text-slate-400 text-sm"
+      <span class="font-bold text-xl tracking-tight select-none">
+        <span class="logo-simpl">simpl</span><span class="logo-ai">ai</span><span class="logo-dot"></span><span class="logo-byliz">by Liz</span>
+      </span>
+      <span class="text-sm" style="color:#9CA3AF;"
             data-es="© 2026 Simplai by Liz · Todos los derechos reservados."
-            data-en="© 2026 Simplai by Liz · All rights reserved.">© 2026 Simplai by Liz · Todos los derechos reservados.</span>
+            data-en="© 2026 Simplai by Liz · All rights reserved.">© 2026 Simplai by Liz · All rights reserved.</span>
     </div>
   </footer>
 

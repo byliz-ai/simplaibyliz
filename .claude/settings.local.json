@@ -5,7 +5,14 @@
       "Bash(git remote *)",
       "Bash(git add *)",
       "Bash(git commit -m ' *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "mcp__411f1109-a22c-47d4-b2cd-0c5d3127e1a4__generate-design",
+      "mcp__411f1109-a22c-47d4-b2cd-0c5d3127e1a4__search-designs",
+      "mcp__411f1109-a22c-47d4-b2cd-0c5d3127e1a4__export-design",
+      "Bash(curl -s -L \"https://export-download.canva.com/09_MA/DAHMcH09_MA/-1/0/0001-4254156202344575772.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQYCGKMUH5AO7UJ26%2F20260614%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260614T045918Z&X-Amz-Expires=11089&X-Amz-Signature=8278638b11ea1f9a5792c2b963d62cf8b0c4c9755c2c4f52ff91681b4cce4b60&X-Amz-SignedHeaders=host%3Bx-amz-expected-bucket-owner&response-expires=Sun%2C%2014%20Jun%202026%2008%3A04%3A07%20GMT\" -o \"Logo cuadrado.png\")",
+      "Bash(curl -s -L \"https://export-download.canva.com/Xobd0/DAHMhfXobd0/-1/0/0001-6217725637790092815.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQYCGKMUH5AO7UJ26%2F20260614%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260614T003234Z&X-Amz-Expires=25875&X-Amz-Signature=52f6d9d43b47c5723b45a70929046a47ab0cfba860d607bd78411cf957bdddae&X-Amz-SignedHeaders=host%3Bx-amz-expected-bucket-owner&response-expires=Sun%2C%2014%20Jun%202026%2007%3A43%3A49%20GMT\" -o \"Banner web preview.png\")",
+      "Bash(git reset *)",
+      "Bash(sips -g pixelWidth -g pixelHeight \"/Users/lizethllanos/Library/CloudStorage/GoogleDrive-llanoslizeth@gmail.com/My Drive/My company/simplai-landing/images/og-image.png\")"
     ]
   }
 }
