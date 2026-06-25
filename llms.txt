@@ -1,0 +1,36 @@
+# Simplai by Liz
+
+> AI automation consulting. Liz helps small businesses and solo founders automate the
+> tasks that slow them down — repetitive work, manual processes, scattered data — with
+> practical AI tools and dashboards. No jargon, no hype, just tools that work.
+
+Tagline: "AI for the tasks that slow you down."
+
+## About
+Liz is a statistician and data scientist with 10+ years of experience. She works
+one-on-one with clients to diagnose where time is being lost and design simple
+automations and AI workflows around how they actually work. Services are delivered in
+English and Spanish, remotely, worldwide.
+
+## Services
+- **Automating repetitive tasks** — remove manual, recurring work from your day.
+- **AI tools for your workflow** — practical AI integrated into how you already work.
+- **Dashboards you'll actually use** — clear data views for real decisions.
+- **Simpler processes** — redesign workflows so they're easier and faster.
+
+## How it works
+1. Initial call — understand your goals.
+2. Diagnosis and design — map where time is lost and what to automate.
+3. Clear proposal — scope, plan, and pricing up front.
+4. Building with you — implement collaboratively.
+5. Delivery and support — hand off and keep it running.
+
+## Who it's for
+Small business owners, solo founders, and teams drowning in repetitive manual tasks
+who want to use AI and automation without the technical complexity.
+
+## Links
+- Website: https://simplaibyliz.com/
+- Book a call: https://calendly.com/simpleaibyliz/30min
+- WhatsApp: https://wa.me/573172866192
+- Email: simpleai@gmail.com
